@@ -54,7 +54,7 @@ export default function HeroSearchAndText({homePageOrNOt}:{homePageOrNOt:boolean
       </span>
     </h1>
     <div className={`mb-6 ${homePageOrNOt ? "mr-20  w-full" : "w-3/4"}`}>
-      <p className="text-gray-500">Describe the Service you need</p>
+      <p className="text-gray-500">Find the right tradesman quickly: Use our search bar and get free offers</p>
       <div className="bg-white relative mt-3">
         <div className="flex w-full  shadow-md   z-30 absolute rounded-md">
           <input type="text" placeholder="e.g   Painter" name="search_service" className="grow px-3 py-3  border-2 border-r-0 rounded-l-md outline-none" title="Search our services" onChange={HandleChange} value={userType[0]}/>

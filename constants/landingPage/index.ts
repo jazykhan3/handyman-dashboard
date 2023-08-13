@@ -305,12 +305,17 @@ const FooterData = {
     AboutUS:[
         {
             id:1,
-            title:'Impressum',
-            link:'/impressum'  
+            title:'Our Story',
+            link:'/our-story'  
+        },
+        {
+            id:2,
+            title:'Careers',
+            link:'/careers'  
         },
     
         {
-            id:2,
+            id:3,
             title:'Contact Us',
             link:'/contactus'  },
     ],
@@ -320,7 +325,35 @@ const FooterData = {
             title:'Terms of Use',
             link:'/termsofuse'
         },
+        {
+            id:2,
+            title:'Contact Support',
+            link:'/contact-support'
+        },
+        {
+            id:3,
+            title:'FAQs',
+            link:'/faqs'
+        },
     ],
+    support:[
+        {
+            id:1,
+            title:'Help Centre',
+            link:'/help-centre'
+        },
+        {
+            id:2,
+            title:'Management',
+            link:'/management'
+        },
+        {
+            id:3,
+            title:'Privacy Policy',
+            link:'/privacy-policy'
+        },
+    ],
+
 }
 const StepsCardsData = [
     {

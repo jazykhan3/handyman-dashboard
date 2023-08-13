@@ -25,6 +25,16 @@ const FooterNavigation = () => (
         </ul>
       </div>
     </nav>
+    <nav className="m-2 space-y-7">
+      <h2 className="text-2xl font-bold">Support</h2>
+      <div className="text-gray-500">
+        <ul className="list-none space-y-2">
+          {FooterData.support.map(({ id, title, link }) => (
+            <FooterLinks key={id} title={title} link={link} />
+          ))}
+        </ul>
+      </div>
+    </nav>
     <div/>
   </React.Fragment>
 );
