@@ -28,7 +28,7 @@ export default function EditProfile({inputData,setInputData,handleSubmit,zip_cod
     }
   };
   return (
-    <div className="w-full space-y-3">
+    <div className="w-4/5 space-y-3">
       <form method="POST" onSubmit={handleSubmit}>
       <div className=" mx-auto  p-8 ">
       <div className="flex mb-4">
@@ -75,10 +75,11 @@ export default function EditProfile({inputData,setInputData,handleSubmit,zip_cod
         </div>
       </div>
 
-      <button className="bg-orange text-white lg:px-5 lg:py-2 px-3 py-1.5 rounded-xl font-medium focus:outline-none float-right " >
+     
+    </div>
+    <button className="bg-orange text-white lg:px-5 lg:py-2 px-3 py-1.5 rounded-xl font-medium focus:outline-none float-right " >
         Save
       </button>
-    </div>
 
 
       </form>

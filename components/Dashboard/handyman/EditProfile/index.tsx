@@ -55,7 +55,7 @@ export default function Index() {
         imageDataPageData={imageDataPageData}
         setImagePageData={setImagePageData}
       />
-      <section className="text-center flex justify-between  items-center my-8">
+      <section className="w-full text-center flex justify-between  items-center my-8">
         <h1 className="font-bold text-4xl text-Heading">
           About <span className="text-orange font-bold"> Business </span>
         </h1>
@@ -81,7 +81,7 @@ export default function Index() {
         </section>
         <section className="flex flex-row gap-20">
         {handymanPofileImgsSrc?.map((imgSrc, idx) => (
-  <Image src={imgSrc} alt="" key={idx} />
+  <Image src={imgSrc} alt="" width={215} height={199} key={idx} />
 ))}
 
         </section>
@@ -122,16 +122,20 @@ export default function Index() {
 
     {/* View More Card */}
     <div
-      className={`w-20 h-20 bg-orange cursor-pointer m-3 px-3 flex justify-center items-center text-center flex-col py-5 rounded-xl shadow-md h-[8rem] transform hover:scale-105`}
+      className={`w-16 h-16 bg-orange cursor-pointer m-3 px-3 flex justify-center items-center text-center flex-col py-5 rounded-xl shadow-md h-[8rem] transform hover:scale-105`}
       // onClick={() => setServicePopUP(true)}
     >
       <div className="w-20 h-20 bg-orangerounded-full flex items-center justify-center">
-        <span className="text-white text-2xl">+</span>
+        <span className="text-white text-4xl">+</span>
       </div>
     </div>
 
 
 </section>
+<section className="my-10 flex justify-end"><button className="bg-orange text-white lg:px-5 lg:py-2 px-3 py-1.5 rounded-xl font-medium focus:outline-none float-right " >
+DELETE PROFILE 
+      </button></section>
+
       </section>
 
     </div>

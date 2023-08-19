@@ -20,7 +20,9 @@ export {default as ClientMessages} from './client/Messages';
 //layout 
 export {default as HandymanLayout} from './handyman/layout';
 //Edit profile
-export {default as EditProfile} from './handyman/EditProfile';  
+export {default as EditProfile} from './handyman/EditProfile'; 
+//Job Listing
+export {default as JobLisitng} from './handyman/JobListing';
 //Payment Packages
 export {default as PaymentPackages} from './handyman/PaymentPackages';
 //Receive offer by email

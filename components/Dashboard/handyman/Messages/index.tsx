@@ -25,7 +25,15 @@ export default function Index() {
   const { toggleSideBar } = useContext(Context);
   return (
     <div className={`lg:w-[80%]  ${toggleSideBar ? "mx-auto" : "md:mx-32"}  my-12`}>
-      <div className="bg-white rounded-md shadow-md h-[18rem] overflow-y-scroll ">
+           <section className="  my-8">
+        <h1 className="font-bold text-4xl text-Heading">
+        Stay Connected:
+          <span className="text-orange font-bold">
+            Your Message Center
+          </span>
+        </h1>
+      </section>
+      <div className=" rounded-md  h-[18rem]  flex flex-col gap-5 ">
         {TestData.map((item)=>(
           <Messages key={item.id} name={item.name} time={item.time} message={item.message}/>
         ))}

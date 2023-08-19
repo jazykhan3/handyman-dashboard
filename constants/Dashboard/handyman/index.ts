@@ -9,46 +9,40 @@ const navigation = [
         id:2,
         linkText:'Job Listing',
         img:'/Dashboard/handyman/orders.svg',
-        href:'/dashboard/handyman/orders',
+        href:'/dashboard/handyman/joblisting',
     },
     {
-        id:7,
+        id:3,
         linkText:'Messages',
         img:'/Dashboard/handyman/messages.svg',
         href:'/dashboard/handyman/messages',
     },
     {
-        id:8,
+        id:4,
         linkText:'Job Histroy',
         img:'/Dashboard/handyman/orders.svg',
         href:'/dashboard/handyman/orders',
     },
     {
-        id:7,
-        linkText:'Messages',
-        img:'/Dashboard/handyman/messages.svg',
-        href:'/dashboard/handyman/messages',
-    },
-    {
-        id:7,
+        id:5,
         linkText:'Subscription Managment',
         img:'/Dashboard/handyman/messages.svg',
         href:'/dashboard/handyman/messages',
     },
     {
-        id:7,
+        id:6,
         linkText:'Payment Settings',
         img:'/Dashboard/handyman/messages.svg',
         href:'/dashboard/handyman/messages',
     },
     {
-        id:3,
+        id:7,
         linkText:'Payment Packages',
         img:'/Dashboard/handyman/paymentPackages.svg',
         href:'/dashboard/handyman/paymentpackages',
     },
     {
-        id:3,
+        id:8,
         linkText:'Job Alerts',
         img:'/Dashboard/handyman/paymentPackages.svg',
         href:'/dashboard/handyman/paymentpackages',
@@ -84,5 +78,6 @@ const navigation = [
     //     href:'/dashboard/handyman/orders',
     // },
 ];
+const statuses = ['complete', 'open', 'deleted', 'accepted'];
 const handymanPofileImgsSrc=['/Dashboard/handyman/handyman-profile-1.svg','/Dashboard/handyman/handyman-profile-2.svg','/Dashboard/handyman/handyman-profile-3.svg','/Dashboard/handyman/handyman-profile-3.svg']
-export {navigation,handymanPofileImgsSrc};
+export {navigation,handymanPofileImgsSrc,statuses};

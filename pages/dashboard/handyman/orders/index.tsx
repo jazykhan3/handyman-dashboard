@@ -12,7 +12,7 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HandymanLayout>
-        <main className="h-screen bg-mainBackground">
+        <main className="h-full bg-mainBackground">
           <div className="Container pt-24">
             <Orders />
           </div>
