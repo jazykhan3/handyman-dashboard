@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCheck, FaCheckCircle, FaTimes, FaTimesCircle } from 'react-icons/fa';
+import { FaCheck, FaCheckCircle, FaEdit, FaTimes, FaTimesCircle, FaTrash } from 'react-icons/fa';
 
 interface StatusButtonProps {
   status: string;
@@ -30,9 +30,10 @@ const StatusButton: React.FC<StatusButtonProps> = ({ status }) => {
   };
 
   return (
-    <div className={getStatusStyles()}>
+    <div className='flex items-center gap-2'>{status == 'open' && <span className='flex gap-1'><FaTrash fontSize={20}/><FaEdit fontSize={20}/></span>}<div className={getStatusStyles()}>
        {status} {getStatusIcon()}
-    </div>
+    </div></div>
+    
   );
 };
 

@@ -1,6 +1,7 @@
 import moment from "moment";
 import React from "react";
 import StatusButton from "./StatusButton";
+import { FaEdit, FaTrash } from "react-icons/fa";
 interface OrderItem {
   title: string;
   paragraph: string;

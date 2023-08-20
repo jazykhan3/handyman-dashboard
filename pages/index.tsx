@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <React.Fragment>
       <Head>
-        <title>Hyandyman</title>
+        <title>Handyman</title>
         <meta name="description" content="Discover professional handyman services to enhance your home with expert support. Find skilled craftsmen for all your home projects, from repairs to renovations. Explore our new listed orders and register now to reach local customers and expand your business. Trust our excellent craftsmen to deliver exceptional results and bring your vision to life with precision and expertise. Don't wait, take the first step towards transforming your home today!" /> {/*Short description more effective for SEO*/}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />

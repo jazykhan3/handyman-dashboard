@@ -24,10 +24,16 @@ const navigation = [
         href:'/dashboard/handyman/orders',
     },
     {
+        id:7,
+        linkText:'Review and feedback',
+        img:'/Dashboard/handyman/paymentPackages.svg',
+        href:'/dashboard/handyman/reviewsandfeedback',
+    },
+    {
         id:5,
         linkText:'Subscription Managment',
         img:'/Dashboard/handyman/messages.svg',
-        href:'/dashboard/handyman/messages',
+        href:'/dashboard/handyman/subscriptionmanagement',
     },
     {
         id:6,
@@ -35,12 +41,7 @@ const navigation = [
         img:'/Dashboard/handyman/messages.svg',
         href:'/dashboard/handyman/messages',
     },
-    {
-        id:7,
-        linkText:'Payment Packages',
-        img:'/Dashboard/handyman/paymentPackages.svg',
-        href:'/dashboard/handyman/paymentpackages',
-    },
+ 
     {
         id:8,
         linkText:'Job Alerts',

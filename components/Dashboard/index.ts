@@ -23,6 +23,10 @@ export {default as HandymanLayout} from './handyman/layout';
 export {default as EditProfile} from './handyman/EditProfile'; 
 //Job Listing
 export {default as JobLisitng} from './handyman/JobListing';
+//reviews and feedback
+export {default as ReviewsAndFeedback} from './handyman/Reviews&feedback';
+//Subscription Management
+export {default as SubcriptionManagement} from './handyman/SubscriptionManagment';
 //Payment Packages
 export {default as PaymentPackages} from './handyman/PaymentPackages';
 //Receive offer by email
