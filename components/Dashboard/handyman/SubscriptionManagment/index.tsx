@@ -68,7 +68,7 @@ import PaymentTable from "./components/table";
     <span className="font-semibold">{item.planName}</span>
     <span className="flex items-center">
       <span className="mr-2">${item.price}</span>
-      <button className={`py-1 px-2 rounded ${item.paymentStatus === 'paid' ? 'bg-green-500 text-white' : 'bg-blue-500 text-white'}`}>
+      <button className={`py-1 px-2 rounded ${item.paymentStatus === 'paid' ? 'bg-[#FF6A18] text-white' : 'bg-[#FF6A18] text-white'}`}>
         {item.paymentStatus}
       </button>
     </span>

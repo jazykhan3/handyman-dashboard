@@ -31,6 +31,7 @@ const ReviewsSection = ({paragraph,star}:{paragraph:string;star:Number[]}) => {
         </div>
         <p className="font-medium text-gray-600 md:w-2/3 w-full">
          {paragraph}
+         <button className="rounded-xl mt-3 float-right bg-orange text-white p-3">Reclaim</button>
         </p>
       </div>
     </div>

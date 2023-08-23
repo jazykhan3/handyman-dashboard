@@ -27,6 +27,10 @@ export {default as JobLisitng} from './handyman/JobListing';
 export {default as ReviewsAndFeedback} from './handyman/Reviews&feedback';
 //Subscription Management
 export {default as SubcriptionManagement} from './handyman/SubscriptionManagment';
+//Payment Setting
+export {default as PaymentSetting} from './handyman/PaymentSetting';
+//Job Alerts
+export {default as JobAlerts} from './handyman/JobAlert';
 //Payment Packages
 export {default as PaymentPackages} from './handyman/PaymentPackages';
 //Receive offer by email
