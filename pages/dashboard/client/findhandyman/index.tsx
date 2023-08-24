@@ -1,20 +1,19 @@
 import React from "react";
-import { ClientLayout, FindHandyman } from "@/components/Dashboard";
+import { ClientLayout, PostedJOB } from "@/components/Dashboard";
 import Head from "next/head";
-
-export default function Index() {
+export default function PostedJOBPage() {
   return (
     <React.Fragment>
-        <Head>
-        <title>Client dashboard | Find handyman</title>
+      <Head>
+        <title>Posted job</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ClientLayout>
-        <main className="sm:h-screen bg-mainBackground">
+        <main className="h-screen bg-mainBackground">
           <div className="Container pt-24">
-            <FindHandyman />
+            <PostedJOB />
           </div>
         </main>
       </ClientLayout>

@@ -7,7 +7,7 @@ const navigation = [
     },
     {
         id:2,
-        linkText:'Posted Jobs',
+        linkText:'Post a job',
         img:'/Dashboard/client/postedJob.svg',
         href:'/dashboard/client/postedjob',
     },

@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { ServiceCards } from "@/constants/landingPage";
 import ServicePopUpPage from '@/components/landingPage/components/ServicePopUP';
+import { GoChevronDown } from "react-icons/go";
 type SearchProps = {
   id: number;
   icon: string;
@@ -18,6 +19,8 @@ export default function HeroSearchAndText() {
   ]);
   const [servicePopUp, setServicePopUP] = useState<boolean>(false);
   const [serviceCardData, setServiceCardData] = useState<string[]>([]);
+  const [isService, setIsService] = useState<boolean>(false);
+  const [selectedService, setSelectedService] = useState<string>('Select Service');
   const [userType, setUserType] = useState<string[]>([]);
   useEffect(() => {
     if (!servicePopUp) {
@@ -47,11 +50,43 @@ export default function HeroSearchAndText() {
   };
   console.log(servicePopUp);
   return (
-    <section className={`lg:mt-5  w-full  md:w-1/2`}>
+    <section className={`lg:mt-5  w-full  `}>
       <div className={`mb-6`}>
-        <p className="text-gray-500">Describe the Service you need</p>
-        <div className="bg-white rounded-md relative mt-3 shadow-md flex flex-row">
-          <div className="flex  flex-col sm:flex-row sm:justify-start rounded-md w-full p-1 ">
+        <div className=" justify-between  flex flex-row">
+        <div className="relative">
+        <div
+          className={`shadow bg-white  flex justify-center items-center rounded-md relative mt-3 shadow-md py-3 px-4 gap-4 ${
+            isService && "text-orange"
+          }`}
+        >
+          <button onClick={() => setIsService(!isService)}>
+          {selectedService}           </button>
+          <GoChevronDown className="mt-1 text-xl" />
+        </div>
+        {isService && (
+          <div
+            className={`h-60 overflow-auto bg-white shadow  p-3 rounded cursor-pointer  mt-1   absolute flex flex-col space-y-5 z-40`}
+          >
+            {ServiceCards?.map((item,idx)=>{
+              return(
+                <span
+                key={idx}
+              className=" hover:text-orange  cursor-pointer"
+              onClick={() => {
+                setIsService(false);
+                setSelectedService(item?.shortText);
+              }}
+            >
+              {item?.shortText}
+            </span>
+              )
+})}
+            
+          
+          </div>
+        )}
+      </div>
+          <div className="flex  flex-col sm:flex-row sm:justify-start rounded-md  p-1 ">
             <input type="text" placeholder="e.g   Painter" name="search_service" className="grow p-3   border-r-0 rounded-l-md outline-none" title="Search our services" onChange={HandleChange} value={userType[0]}/>
             <button className="sm:bg-white border-l py-2 bg-orange rounded-l-md sm:rounded-l-none border-gray-300 px-4 text-black rounded-r-md hover:text-orange" onClick={() => FindService()} disabled={userType.length == 0}>
               Find Service
