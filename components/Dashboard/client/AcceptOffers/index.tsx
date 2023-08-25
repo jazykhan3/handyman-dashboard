@@ -10,7 +10,8 @@ const TestData = [
     posted_on:{
       date:'23/05/2023',
       time:'9:45 AM'
-    }
+    },
+    imgUrl:'/Dashboard/client/cityIcon.svg'
   },
   {
     id:2,
@@ -20,7 +21,8 @@ const TestData = [
     posted_on:{
       date:'23/05/2023',
       time:'9:45 AM'
-    }
+    },
+    imgUrl:'/Dashboard/client/cityIcon.svg'
   },
 ];
 export default function Index() {
@@ -29,7 +31,7 @@ export default function Index() {
     <div className={`w-full ${toggleSideBar ? "lg:mx-32" : "md:mx-10"} my-12`}>
       <div className="flex justify-center items-center gap-14 flex-wrap">
         {TestData.map((item)=>(
-          <AcceptOffers key={item.id} job_title={item.job_title} listing_ID={item.listing_ID} price={item.price} posted_on={item.posted_on}/>
+          <AcceptOffers key={item.id} icon={item?.imgUrl} job_title={item.job_title} listing_ID={item.listing_ID} price={item.price} posted_on={item.posted_on}/>
         ))}
       </div>
     </div>

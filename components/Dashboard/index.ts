@@ -12,9 +12,14 @@ export {default as ChangePassword} from './client/ChangePassword'
 //Accept Offers
 export {default as AcceptOffers} from './client/AcceptOffers';
 //Deleted jobs
-export {default as DeletedJob} from './client/DeletedJobs'
+export {default as JobHistroy} from './client/JobHistroy'
 //Messages
 export {default as ClientMessages} from './client/Messages';
+//Profile Management
+export {default as ProfileManagement} from './client/ProfileManagement'; 
+export {default as ReviewsAndFeedbackClient} from './client/Reviews&feedback';
+
+
 
 //---------------------------------------handyman------------------------------//
 //layout 

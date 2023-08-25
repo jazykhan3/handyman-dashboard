@@ -1,9 +1,9 @@
 const navigation = [
     {
         id:1,
-        linkText:'Find Handyman',
+        linkText:'Profile Management',
         img:'/Dashboard/client/handyman.svg',
-        href:'/dashboard/client/findhandyman',
+        href:'/dashboard/client/profilemanagement',
     },
     {
         id:2,
@@ -11,35 +11,41 @@ const navigation = [
         img:'/Dashboard/client/postedJob.svg',
         href:'/dashboard/client/postedjob',
     },
-    {
-        id:3,
-        linkText:'Change Email',
-        img:'/Dashboard/client/email.svg',
-        href:'/dashboard/client/changeemail',
-    },
-    {
-        id:4,
-        linkText:'Change Password',
-        img:'/Dashboard/client/password.svg',
-        href:'/dashboard/client/changepassword',
-    },
+    // {
+    //     id:3,
+    //     linkText:'Change Email',
+    //     img:'/Dashboard/client/email.svg',
+    //     href:'/dashboard/client/changeemail',
+    // },
+    // {
+    //     id:4,
+    //     linkText:'Change Password',
+    //     img:'/Dashboard/client/password.svg',
+    //     href:'/dashboard/client/changepassword',
+    // },
     {
         id:5,
-        linkText:'Accept Offers',
+        linkText:'Offers',
         img:'/Dashboard/client/accept.svg',
-        href:'/dashboard/client/acceptoffers',
+        href:'/dashboard/client/offers',
     },
     {
         id:6,
-        linkText:'Deleted Jobs',
+        linkText:'Job Histroy',
         img:'/Dashboard/client/delete.svg',
-        href:'/dashboard/client/deletedjobs',
+        href:'/dashboard/client/jobhistroy',
     },
     {
         id:7,
         linkText:'Messages',
         img:'/Dashboard/client/message.svg',
         href:'/dashboard/client/messages',
+    },
+    {
+        id:8,
+        linkText:'Review and feedback',
+        img:'/Dashboard/handyman/paymentPackages.svg',
+        href:'/dashboard/client/reviewsandfeedback',
     },
 ];
 export {navigation};
