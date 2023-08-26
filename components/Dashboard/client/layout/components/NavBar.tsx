@@ -36,7 +36,7 @@ export default function NavBar({setSlideNav}: {setSlideNav: React.Dispatch<React
         </div>
         <GiHamburgerMenu className="block left-0 absolute  md:hidden text-3xl ml-3 cursor-pointer" onClick={() => setSlideNav((e) => !e)}/>
         <div className="w-2/3">
-          <Link href={"/dashboard/client/"} title="dashboard" className="text-xl font-bold  hidden md:block">
+          <Link href={"/dashboard/client/profilemanagement/"} title="dashboard" className="text-xl font-bold  hidden md:block">
             Client Dashboard
           </Link>
         </div>
