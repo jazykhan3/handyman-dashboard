@@ -12,7 +12,7 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ClientLayout>
-        <main className="sm:h-full bg-mainBackground">
+        <main className="sm:h-screen bg-mainBackground">
           <div className="Container pt-24">
             <FindHandyman />
           </div>

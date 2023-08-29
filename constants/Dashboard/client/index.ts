@@ -6,11 +6,18 @@ const navigation = [
         href:'/dashboard/client/profilemanagement',
     },
     {
+        id:3,
+        linkText:'Handyman Search',
+        img:'/Dashboard/client/postedJob.svg',
+        href:'/dashboard/client/handymansearch',
+    },
+    {
         id:2,
         linkText:'Post a job',
         img:'/Dashboard/client/postedJob.svg',
         href:'/dashboard/client/postedjob',
     },
+  
     // {
     //     id:3,
     //     linkText:'Change Email',

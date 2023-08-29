@@ -3,6 +3,8 @@
 export {default as ClientLayout} from './client/layout';
 //Find handyman
 export {default as FindHandyman} from './client/FindHandyman';
+//HandymanSearch
+export {default as HandymanSearch} from './client/HandymanSearch';
 //Posted job 
 export {default as PostedJOB} from './client/PostedJob';
 //Change email

@@ -11,7 +11,7 @@ export default function PostedJOBPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ClientLayout>
-        <main className="h-full bg-mainBackground">
+        <main className="h-screen bg-mainBackground">
           <div className="Container pt-24">
             <ProfileManagement/>
           </div>
