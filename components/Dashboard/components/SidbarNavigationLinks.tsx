@@ -15,12 +15,12 @@ export default function SidbarNavigationLinks({navigation,toggleSideBar,isAdmin}
   };
   return (
     <ul className={`${toggleSideBar ? "md:ml-7" : "ml-0"} sm:space-y-3 ${!isAdmin && 'h-[60vh]'}`}>
-      {navigation.map(({ id, linkText, href, img }) => (
+      {navigation?.map(({ id, linkText, href, img }) => (
         <Link href={href} key={id}>
           <li className={`${toggleSideBar ? "hover:bg-orange hover:bg-opacity-60" : "" } ${!isAdmin ? 'sm:py-3 py-2' : 'py-1'} rounded-l-full my-1 ${isActiveLink(href)}`}>
             <div className="flex justify-start items-center gap-4 ml-6">
               <Image src={img} alt="client" className={`object-cover ${toggleSideBar && !isAdmin ? "w-5" : "w-7" } ${isAdmin && 'w-[20px]'} cursor-pointer`} width={20} height={20}/>
-              <span title={linkText} className={`${isAdmin ? 'text-sm' : 'font-bold'}  hover:text-white ${toggleSideBar ? "block" : "hidden" }`}>
+              <span title={linkText} className={`${isAdmin ? 'font-bold' : 'font-bold'}  hover:text-white ${toggleSideBar ? "block" : "hidden" }`}>
                 {linkText}
               </span>
             </div>

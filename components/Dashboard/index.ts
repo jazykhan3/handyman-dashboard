@@ -19,6 +19,7 @@ export {default as JobHistroy} from './client/JobHistroy'
 export {default as ClientMessages} from './client/Messages';
 //Profile Management
 export {default as ProfileManagement} from './client/ProfileManagement'; 
+//Reviews and feedback
 export {default as ReviewsAndFeedbackClient} from './client/Reviews&feedback';
 
 
@@ -56,6 +57,12 @@ export {default as Orders} from './handyman/Orders';
 export {default as AdminDashBoard} from './admin/layout';
 //Client profile
 export {default as ClientProfile} from './admin/ClientProfile';
+//Messages
+export {default as Messages} from './admin/Messages';
+//Payments
+export {default as Payments} from './admin/Payments';
+//Handyman Verification
+export {default as HandymanVerification} from './admin/HandymanVerification';
 //Login details 
 export {default as LoginDetailsCS} from './admin/LoginDetailsCS';
 //Active listing 
