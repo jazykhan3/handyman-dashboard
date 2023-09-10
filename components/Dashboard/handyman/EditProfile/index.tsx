@@ -59,8 +59,8 @@ export default function Index() {
         <h1 className="font-bold text-4xl text-Heading">
           About <span className="text-orange font-bold"> Business </span>
         </h1>
-        <button className="bg-orange px-5 py-2 font-medium flex align-center bg-opacity-60 rounded-full">
-          Edit <BsPencil className="ml-2 mt-1" />
+        <button className="bg-orange px-5 py-2 font-medium flex align-center text-white   rounded-xl">
+          Edit <BsPencil className="ml-2 mt-1 text-white" />
         </button>
       </section>
       <section>
@@ -75,8 +75,8 @@ export default function Index() {
         </p>
         <section className="text-center flex justify-between  items-center my-8">
           <h1 className="font-bold text-4xl text-Heading">Photos</h1>
-          <button className="bg-orange px-5 py-2 font-medium flex align-center bg-opacity-60 rounded-full">
-            Upload <BiUpload className="ml-2 mt-1" />
+          <button className="bg-orange px-5 py-2 font-medium flex align-center text-white rounded-xl">
+            Upload <BiUpload className="ml-2 mt-1 text-white" />
           </button>
         </section>
         <section className="flex flex-row gap-20">
@@ -122,7 +122,7 @@ export default function Index() {
 
     {/* View More Card */}
     <div
-      className={`w-16 h-16 bg-orange cursor-pointer m-3 px-3 flex justify-center items-center text-center flex-col py-5 rounded-xl shadow-md h-[8rem] transform hover:scale-105`}
+      className={`w-16 h-16 bg-orange cursor-pointer m-3 px-3 flex justify-center items-center text-center flex-col py-5 rounded-xl shadow-md h-[4rem] transform hover:scale-105`}
       // onClick={() => setServicePopUP(true)}
     >
       <div className="w-20 h-20 bg-orangerounded-full flex items-center justify-center">

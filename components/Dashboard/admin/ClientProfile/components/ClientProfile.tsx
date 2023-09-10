@@ -115,6 +115,102 @@ export default function ClientProfile({
       Unverified: false,
       Activate: true,
     },
+    {
+      Image: "image1.jpg",
+      Name: "John Doe",
+      CompanyName: "ABC Inc.",
+      Email: "johndoe@example.com",
+      IPAddress: "192.168.1.1",
+      RegistrationDate: "2023-09-01",
+      UploadedDocuments: true,
+      Verified: true,
+      Unverified: false,
+      Activate: true,
+    },
+    {
+      Image: "image1.jpg",
+      Name: "John Doe",
+      CompanyName: "ABC Inc.",
+      Email: "johndoe@example.com",
+      IPAddress: "192.168.1.1",
+      RegistrationDate: "2023-09-01",
+      UploadedDocuments: true,
+      Verified: true,
+      Unverified: false,
+      Activate: true,
+    },
+    {
+      Image: "image1.jpg",
+      Name: "John Doe",
+      CompanyName: "ABC Inc.",
+      Email: "johndoe@example.com",
+      IPAddress: "192.168.1.1",
+      RegistrationDate: "2023-09-01",
+      UploadedDocuments: true,
+      Verified: true,
+      Unverified: false,
+      Activate: true,
+    },
+    {
+      Image: "image1.jpg",
+      Name: "John Doe",
+      CompanyName: "ABC Inc.",
+      Email: "johndoe@example.com",
+      IPAddress: "192.168.1.1",
+      RegistrationDate: "2023-09-01",
+      UploadedDocuments: true,
+      Verified: true,
+      Unverified: false,
+      Activate: true,
+    },
+    {
+      Image: "image1.jpg",
+      Name: "John Doe",
+      CompanyName: "ABC Inc.",
+      Email: "johndoe@example.com",
+      IPAddress: "192.168.1.1",
+      RegistrationDate: "2023-09-01",
+      UploadedDocuments: true,
+      Verified: true,
+      Unverified: false,
+      Activate: true,
+    },
+    {
+      Image: "image1.jpg",
+      Name: "John Doe",
+      CompanyName: "ABC Inc.",
+      Email: "johndoe@example.com",
+      IPAddress: "192.168.1.1",
+      RegistrationDate: "2023-09-01",
+      UploadedDocuments: true,
+      Verified: true,
+      Unverified: false,
+      Activate: true,
+    },
+    {
+      Image: "image1.jpg",
+      Name: "John Doe",
+      CompanyName: "ABC Inc.",
+      Email: "johndoe@example.com",
+      IPAddress: "192.168.1.1",
+      RegistrationDate: "2023-09-01",
+      UploadedDocuments: true,
+      Verified: true,
+      Unverified: false,
+      Activate: true,
+    },
+    {
+      Image: "image1.jpg",
+      Name: "John Doe",
+      CompanyName: "ABC Inc.",
+      Email: "johndoe@example.com",
+      IPAddress: "192.168.1.1",
+      RegistrationDate: "2023-09-01",
+      UploadedDocuments: true,
+      Verified: true,
+      Unverified: false,
+      Activate: true,
+    },
     // Add more data objects as needed
   ];
 
@@ -158,7 +254,7 @@ export default function ClientProfile({
       <div className="mt-10 shadow-md rounded-md">
         <div className="w-full overflow-x-scroll">
           <div className="w-[60rem] md:w-full">
-            <table className="min-w-full">
+            <table className="min-w-full border border-grey">
               <thead className="bg-[#FF6A1880]">
                 <tr>
                   <th className="p-4">Image</th>
@@ -176,7 +272,13 @@ export default function ClientProfile({
               <tbody>
                 {data.map((item, index) => (
                   <tr key={index} className="mb-2">
-                    <td className="text-center">{item.Image}</td>
+                    <td className="flex items-center justify-center">
+                      <img
+                        height={50}
+                        width={50}
+                        src="/Dashboard/admin/admin.png"
+                      />
+                    </td>
                     <td className="text-center">{item.Name}</td>
                     <td className="text-center">{item.CompanyName}</td>
                     <td className="text-center">{item.Email}</td>
@@ -194,42 +296,45 @@ export default function ClientProfile({
         </div>
       </div>
       <section className="w-5/5 flex justify-between my-10">
-        <div className="w-3/5"><div className="w-full overflow-x-scroll">
-          <div className="w-[60rem] md:w-full">
-          <h1 className="font-bold text-4xl text-Heading my-10">
-          Login
-
-          <span className="text-orange font-bold">
-              Details
-            </span>
-           
-          </h1>
-            <table className="min-w-full">
-              <thead className="bg-[#FF6A1880]">
-                <tr>
-                 
-                  <th className="p-4">IP Address</th>
-                  <th className="p-4">Login Date</th>
-                  <th className="p-4">Login Time</th>
-
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((item, index) => (
-                  <tr key={index} className="mb-2">
-                    <td className="text-center">{item.IPAddress}</td>
-                    <td className="text-center">{item.RegistrationDate}</td>
-                    <td className="text-center">{item.RegistrationDate}</td>
+        <div className="w-3/5">
+          <div className="w-full overflow-x-scroll">
+            <div className="w-[60rem] md:w-full">
+              <h1 className="font-bold text-4xl text-Heading my-10">
+                Login
+                <span className="text-orange font-bold">Details</span>
+              </h1>
+              <table className="min-w-full border border-grey">
+                <thead className="bg-[#FF6A1880]">
+                  <tr>
+                    <th className="p-4">IP Address</th>
+                    <th className="p-4">Login Date</th>
+                    <th className="p-4">Login Time</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {data.map((item, index) => (
+                    <tr key={index} className="mb-2 my-4">
+                      <td className="text-center">{item.IPAddress}</td>
+                      <td className="text-center">{item.RegistrationDate}</td>
+                      <td className="text-center">{item.RegistrationDate}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div></div>
-        <div className="w-2/5 flex flex-col justify-between items-end">
-          <img width={315} height={181} src={'/Dashboard/admin/profileMangement1.svg'}></img>
-          <img width={315} height={181} src={'/Dashboard/admin/profileManagement2.svg'}></img>
-
+        </div>
+        <div className="w-2/5 flex flex-col justify-between items-end pt-32">
+          <img
+            width={315}
+            height={181}
+            src={"/Dashboard/admin/profileMangement1.svg"}
+          ></img>
+          <img
+            width={315}
+            height={181}
+            src={"/Dashboard/admin/profileManagement2.svg"}
+          ></img>
         </div>
       </section>
     </>

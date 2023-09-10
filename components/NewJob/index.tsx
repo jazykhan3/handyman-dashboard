@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { CiLocationOn, CiClock2 } from "react-icons/ci";
-import {IoCallOutline} from 'react-icons/io5';
-import {useRouter} from 'next/router';
+import { IoCallOutline } from "react-icons/io5";
+import { useRouter } from "next/router";
 const ICON = (
-  <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="23"
+    height="23"
+    viewBox="0 0 23 23"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M7.893 11.2856C7.80557 11.2324 7.73335 11.1644 7.67635 11.0814C6.9968 10.0864 6.64844 9.00367 6.63128 7.83326C6.62298 7.27655 6.69188 6.72925 6.83797 6.19136C7.12905 5.11835 7.68797 4.2119 8.51473 3.47203C9.52632 2.56558 10.697 2.06919 12.0268 1.98287C13.2581 1.90262 14.4063 2.2009 15.4716 2.87769C16.3548 3.43882 17.0319 4.16735 17.5028 5.06329C17.7601 5.55359 17.9422 6.07404 18.049 6.62466C18.2637 7.73365 18.1525 8.83212 17.7153 9.92007C17.3501 10.8293 16.787 11.5924 16.0261 12.2094C15.9437 12.2758 15.8568 12.2822 15.7655 12.2285C15.5646 12.1095 15.5059 11.9701 15.5895 11.8102C15.6166 11.7581 15.7024 11.6649 15.8468 11.5304C16.7195 10.7197 17.2527 9.74244 17.4464 8.59859C17.5382 8.05406 17.5416 7.50316 17.4563 6.9459C17.246 5.56908 16.5654 4.45263 15.4143 3.59654C14.7785 3.12339 14.0699 2.81931 13.2885 2.68428C12.7462 2.59076 12.1953 2.5844 11.6358 2.66519C10.6198 2.81239 9.72803 3.22992 8.96048 3.91778C8.26931 4.53757 7.78454 5.29045 7.50619 6.17642C7.33962 6.70822 7.26021 7.25331 7.26795 7.81168C7.2829 8.86587 7.59943 9.83679 8.21756 10.7244C8.29836 10.8401 8.34152 10.9308 8.34706 10.9967C8.35757 11.119 8.29946 11.2164 8.17274 11.2889C8.07866 11.3426 7.98542 11.3414 7.893 11.2856Z"
       fill="#474747"
@@ -28,107 +34,158 @@ const ICON = (
   </svg>
 );
 export default function Job() {
-  const [message,setMessage] = useState<string>('');
-  const [offer,setOffer] = useState<boolean>(false);
-  const [price,setPrice] = useState<string>('$250');
+  const [message, setMessage] = useState<string>("");
+  const [offer, setOffer] = useState<boolean>(false);
+  const [price, setPrice] = useState<string>("$250");
   // console.log(message); //-> user message data
   const router = useRouter();
   return (
-    <div className="w-full mt-10">
-      <div className="flex justify-between items-start flex-col lg:flex-row gap-6 lg:gap-0">
-        <div className="space-y-10 w-full lg:basis-2/5">
-          <div className="bg-white rounded-lg  shadow-md w-full">
-            <Image src={"/JobPostTest/JobPostTest.png"} className="w-full object-cover h-auto rounded-t-lg " alt="New job post" width={500} height={500}/>
-            <section className="py-3 px-4">
-              <h1 className="font-bold text-xl text-black">
-                Laying tiles: 25m2; Floor in bathroom, kitchen, hall
-              </h1>
-              <div className="flex gap-5 items-center py-2">
-                <div className="flex justify-center items-center gap-2">
-                  <CiLocationOn />
-                  <span>Berlin</span>
-                </div>
-                <div className="flex justify-center items-center gap-2">
-                  <CiClock2 />
-                  <span>Posted 5 hours ago</span>
-                </div>
-              </div>
-              <section className="space-y-2 mt-2">
-                <h2 className="font-bold text-xl">Description</h2>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularized in the 1960s with
-                  the release of Letterset sheets containing Lorem Ipsum
-                  passages.
-                </p>
-              </section>
-            </section>
-          </div>
-          <div className="bg-white  flex flex-col rounded-lg shadow">
-            <textarea rows={7} cols={10} placeholder="Enter message" name="enter_message" className="p-2 rounded-t-lg outline-none border-b border-orange resize-none" onChange={(e)=>setMessage(e.target.value)} value={message}/>
-            <div className="flex justify-end m-3">
-              <button className="bg-orange px-3 sm:px-4 py-2 sm:py-3 text-white rounded-lg hover:text-gray-200">
-                Send message
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="basis-2/5">
-          <div className="m-2">
-            <button className="bg-orange px-7 py-3 md:px-14 md:py-4  flex justify-center items-center gap-4 rounded-lg text-white text-xl hover:text-gray-100 group w-full" onClick={()=>setOffer(!offer)}>
-              <span className="bg-white p-1 rounded-full group-hover:bg-gray-200">{ICON}</span>
-              Make an offer
-            </button>
-          </div>
-          {offer && (
-            <div className="bg-white  py-3 rounded-lg shadow-md  my-6">
-            <section className="mb-5 border-b-2 pb-5 px-4">
-              <h3 className="font-bold text-xl text-black">Description</h3>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry.Lorem Ipsum has been the {"industry's"}{" "}
-                standard dummy text.
-              </p>
-            </section>
-            <section className="mb-5 border-b-2 pb-5 px-4">
-              <h4 className="font-bold text-xl text-black">Job Title</h4>
-              <p>Laying tiles: 25m2; Floor in bathroom, kitchen, hall</p>
-            </section>
-            <section className="mb-5 border-b-2 pb-5 px-4">
-              <h5 className="font-bold text-xl text-black">Pricing </h5>
-              <input type="text" onChange={e=>setPrice(e.target.value)} value={price} className="text-lg font-semibold w-20 outline-none border border-white hover:border hover:border-gray-400 mt-1 rounded-md"/>
-            </section>
-            <div className="flex justify-end items-center px-4">
-              <button className="bg-orange px-4   sm:py-3 py-2 text-white rounded-lg">Send offer</button>
-            </div>
-        </div>
-          )}
-          <div className="m-2">
-            <button className="bg-orange px-5 py-3 md:px-10 md:py-4 flex justify-center items-center gap-4 rounded-lg text-white text-xl hover:text-gray-100 group w-full">
-              <div className="bg-white p-1 rounded-full group-hover:bg-gray-200">
-                <IoCallOutline className="text-black"/>
-              </div>
-                +49 1234 5678
-            </button> 
-            <div className="mt-5 space-y-5">
-              <div>
-                <span className="block mb-2 font-bold text-xl">Listing ID</span>
-                <span className="bg-white shadow-md rounded-md  py-3 px-5 inline-block">32918465</span>
-              </div>
-              <div>
-                <span className="block mb-2 font-bold text-xl">Implementation Date</span>
-                <span className="bg-white shadow-md rounded-md  py-3 px-5 inline-block">In 3 month</span>
-              </div>
-            </div>
-            <button className="bg-orange py-2 px-5  my-4 rounded-lg text-white text-xl hover:text-gray-100" onClick={()=> router.push(`/newjob#${2}`)}>Back</button>
-          </div>
-        </div>
-      </div>
-    </div>
+   <> <div className="w-full mt-10">
+   <div className="flex justify-between items-start flex-col lg:flex-row gap-6 lg:gap-0">
+     <div className="space-y-10 w-full lg:basis-2/5">
+       <div className="bg-white rounded-lg  shadow-md w-full">
+         <Image
+           src={"/JobPostTest/JobPostTest.png"}
+           className="w-full object-cover h-auto rounded-t-lg "
+           alt="New job post"
+           width={500}
+           height={500}
+         />
+         <section className="py-3 px-4">
+           <h1 className="font-bold text-xl text-orange">
+             Demolition & Disposal{" "}
+           </h1>
+           <h1 className=" t text-black">
+             Laying tiles: 25m2; Floor in bathroom, kitchen, hall
+           </h1>
+
+           <section className="w-5/5 flex justify-between ">
+             <section className="w-2/5 flex flex-col gap-3 pt-20 ">
+               <span>Sq: 25m2</span>
+               <span>Floors: 3</span>
+               <span>Rooms: 5</span>
+
+               </section>
+             <section className="space-y-2 mt-2 w-3/5">
+               <h2 className="font-bold text-xl">Description</h2>
+               <p>
+                 Lorem Ipsum is simply dummy text of the printing and
+                 typesetting industry. Lorem Ipsum has been the industry
+                 standard dummy text ever since the 1500s, when an unknown
+                 printer took a galley of type and scrambled it to make a
+                 type specimen book. It has survived not only five centuries,
+                 but also the leap into electronic typesetting, remaining
+                 essentially unchanged. It was popularized in the 1960s with
+                 the release of Letterset sheets containing Lorem Ipsum
+                 passages.
+               </p>
+             </section>
+           </section>
+           <div className="flex gap-5 items-center justify-between py-2">
+             <div className="flex justify-center items-center gap-2">
+               <CiLocationOn />
+               <span>Berlin</span>
+             </div>
+             <div className="flex justify-center items-center gap-2">
+               <CiClock2 />
+               <span>Posted 5 hours ago</span>
+             </div>
+           </div>
+         </section>
+       </div>
+       <div className="bg-white  flex flex-col rounded-lg shadow">
+         <textarea
+           rows={7}
+           cols={10}
+           placeholder="Enter message"
+           name="enter_message"
+           className="p-2 rounded-t-lg outline-none border-b border-orange resize-none"
+           onChange={(e) => setMessage(e.target.value)}
+           value={message}
+         />
+         <div className="flex justify-end m-3">
+           <button className="bg-orange px-3 sm:px-4 py-2 sm:py-3 text-white rounded-lg hover:text-gray-200">
+             Send message
+           </button>
+         </div>
+       </div>
+     </div>
+     <div className="basis-2/5">
+       <div className="m-2">
+         <button
+           className="bg-orange px-7 py-3 md:px-14 md:py-4  flex justify-center items-center gap-4 rounded-lg text-white text-xl hover:text-gray-100 group w-full"
+           onClick={() => setOffer(!offer)}
+         >
+           <span className="bg-white p-1 rounded-full group-hover:bg-gray-200">
+             {ICON}
+           </span>
+           Make an offer
+         </button>
+       </div>
+       {offer && (
+         <div className="bg-white  py-3 rounded-lg shadow-md  my-6">
+           <section className="mb-5 border-b-2 pb-5 px-4">
+             <h3 className="font-bold text-xl text-black">Description</h3>
+             <p>
+               Lorem Ipsum is simply dummy text of the printing and
+               typesetting industry.Lorem Ipsum has been the {"industry's"}{" "}
+               standard dummy text.
+             </p>
+           </section>
+           <section className="mb-5 border-b-2 pb-5 px-4">
+             <h4 className="font-bold text-xl text-black">Job Title</h4>
+             <p>Laying tiles: 25m2; Floor in bathroom, kitchen, hall</p>
+           </section>
+           <section className="mb-5 border-b-2 pb-5 px-4">
+             <h5 className="font-bold text-xl text-black">Pricing </h5>
+             <input
+               type="text"
+               onChange={(e) => setPrice(e.target.value)}
+               value={price}
+               className="text-lg font-semibold w-20 outline-none border border-white hover:border hover:border-gray-400 mt-1 rounded-md"
+             />
+           </section>
+           <div className="flex justify-end items-center px-4">
+             <button className="bg-orange px-4   sm:py-3 py-2 text-white rounded-lg">
+               Send offer
+             </button>
+           </div>
+         </div>
+       )}
+       <div className="m-2">
+         <button className="bg-orange px-5 py-3 md:px-10 md:py-4 flex justify-center items-center gap-4 rounded-lg text-white text-xl hover:text-gray-100 group w-full">
+           <div className="bg-white p-1 rounded-full group-hover:bg-gray-200">
+             <IoCallOutline className="text-black" />
+           </div>
+           +49 1234 5678
+         </button>
+         <div className="mt-5 space-y-5">
+           <div>
+             <span className="block mb-2 font-bold text-xl">Listing ID</span>
+             <span className="bg-white shadow-md rounded-md  py-3 px-5 inline-block">
+               32918465
+             </span>
+           </div>
+           <div>
+             <span className="block mb-2 font-bold text-xl">
+               Implementation Date
+             </span>
+             <span className="bg-white shadow-md rounded-md  py-3 px-5 inline-block">
+               In 3 month
+             </span>
+           </div>
+         </div>
+         
+       </div>
+     </div>
+   </div>
+   
+ </div>
+ <button
+ className="bg-orange py-2 px-5  my-4 flex ml-auto justify-end rounded-lg text-white text-xl hover:text-gray-100"
+ onClick={() => router.push(`/newjob#${2}`)}
+>
+ Back
+</button></>
   );
 }

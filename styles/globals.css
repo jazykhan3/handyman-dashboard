@@ -32,3 +32,8 @@ html {
   .off {
     color: #ccc;
   }
+  .heroSection{
+    background-image: url('../public/LandingPage/landingPage.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

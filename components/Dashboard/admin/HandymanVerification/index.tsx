@@ -6,7 +6,7 @@ import ReviewSection from "./components/reviewSection";
 const TestData = [
   {
     id:1,
-    name:'Johnsmith',
+    name:'Paul Ben',
     time:'5 hours ago',
     message:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text'
   },

@@ -143,6 +143,8 @@ export default function Index({
   return (
     <div className="Container my-10">
       <div className="mx-5">
+      <h2 className="font-semibold my-2">Find <span className="text-orange">Orders</span></h2>
+
         <h2 className="font-semibold">Search by filters</h2>
         <Filters
           setFilter={setFilter}

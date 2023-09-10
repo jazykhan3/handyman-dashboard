@@ -102,8 +102,8 @@ export default function Index() {
            <section className="  my-8">
         <h1 className="font-bold text-4xl text-Heading">
         Admin payment management:
-          <span className="text-orange font-bold">
-          Control and Oversight         </span>
+        &nbsp; &nbsp; <span className="text-orange font-bold">
+            Control and Oversight         </span>
         </h1>
       </section>
       <div className=" rounded-md  h-[18rem]  flex flex-col gap-5 ">
