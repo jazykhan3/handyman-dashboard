@@ -59,6 +59,10 @@ export {default as AdminDashBoard} from './admin/layout';
 export {default as ClientProfile} from './admin/ClientProfile';
 //Messages
 export {default as Messages} from './admin/Messages';
+//Job Postings
+export {default as StatisticsAndAnalytics} from './admin/StatisticsAndAnalytics'
+//StatisticsAndAnalytics
+export {default as JobPostings} from './admin/JobHistroy'
 //Payments
 export {default as Payments} from './admin/Payments';
 //Handyman Verification

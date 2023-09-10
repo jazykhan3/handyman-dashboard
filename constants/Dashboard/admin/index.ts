@@ -8,22 +8,30 @@ const navigation = {
             href: '/dashboard/admin/clientprofile',
         },
         {
-            id: 2,
-            linkText: 'Login Details',
-            img: '/Dashboard/admin/logindetails.svg',
-            href: '/dashboard/admin/logindetailscs',
+            id: 11,
+            linkText: 'Job Postings',
+            img: '/Dashboard/admin/clientprofile.svg',
+            href: '/dashboard/admin/jobpostings',
         },
+        // {
+        //     id: 2,
+        //     linkText: 'Login Details',
+        //     img: '/Dashboard/admin/logindetails.svg',
+        //     href: '/dashboard/admin/logindetailscs',
+        // },
         {
             id: 10,
             linkText: 'Handyman Verification',
             img: '/Dashboard/admin/logindetails.svg',
             href: '/dashboard/admin/handymanverification',
-        }, {
-            id: 3,
-            linkText: 'Active Listing',
-            img: '/Dashboard/admin/acceptedoffers.svg',
-            href: '/dashboard/admin/activelistingcs',
-        }, {
+        }, 
+        // {
+        //     id: 3,
+        //     linkText: 'Active Listing',
+        //     img: '/Dashboard/admin/acceptedoffers.svg',
+        //     href: '/dashboard/admin/activelistingcs',
+        // }, 
+        {
             id: 4,
             linkText: 'Payments',
             img: '/Dashboard/admin/changedemail.svg',
@@ -33,17 +41,19 @@ const navigation = {
             linkText: 'Messages',
             img: '/Dashboard/admin/acceptedoffers.svg',
             href: '/dashboard/admin/messages',
-        }, {
+        }, 
+        {
             id: 6,
-            linkText: 'Review Section',
+            linkText: 'Statistics and Analytics',
             img: '/Dashboard/admin/reviewsection.svg',
-            href: '/dashboard/admin/reviewsectioncs',
-        }, {
-            id: 7,
-            linkText: 'Un Accepted Offers',
-            img: '/Dashboard/admin/unacceptedoffers.svg',
-            href: '/dashboard/admin/unacceptedofferscs',
-        },
+            href: '/dashboard/admin/statisticsandanalytics',
+        }, 
+        
+        //     id: 7,
+        //     linkText: 'Un Accepted Offers',
+        //     img: '/Dashboard/admin/unacceptedoffers.svg',
+        //     href: '/dashboard/admin/unacceptedofferscs',
+        // },
 
     ],
     // handyman: [
