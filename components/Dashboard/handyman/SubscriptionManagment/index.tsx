@@ -37,19 +37,19 @@ import PaymentTable from "./components/table";
       
     const dummyData = [
         {
-          planName: '3 Month Subscription',
+          planName: '3-Month',
           price: 30,
-          paymentStatus: 'payment',
+          paymentStatus: 'Payment',
         },
         {
-          planName: '6 Month Subscription',
+          planName: '6-Month',
           price: 50,
-          paymentStatus: 'paid',
+          paymentStatus: 'Paid',
         },
         {
-          planName: '12 Month Subscription',
+          planName: '12-Month',
           price: 90,
-          paymentStatus: 'paid',
+          paymentStatus: 'Paid',
         },
       ];
     return (
@@ -57,27 +57,29 @@ import PaymentTable from "./components/table";
         <h1 className="text-3xl font-bold">
           <span className="text-orange">Your Subscription Hub:</span> Manage Your Preferences
         </h1>
-        <div className="my-7 mx-5">
+        <div className="my-7 mx-5 flex flex-row gap-4">
         {dummyData?.map((item, idx) => (
-  <div key={idx} className="flex items-end justify-between p-4 border border-gray-300 rounded-lg h-[6rem] shadow-md mb-4">
-    <div className="w-2/5 mr-4">
-      <Image height={85} width={386} src={'/Dashboard/handyman/paymentOptions.svg'} alt={''} />
-    </div>
-    <div className="w-3/5 border bg-white rounded-2xl  shadow-md p-3">
-  <div className="flex items-center justify-between">
-    <span className="font-semibold">{item.planName}</span>
-    <span className="flex items-center">
-      <span className="mr-2">${item.price}</span>
-      <button className={`py-1 px-2 rounded ${item.paymentStatus === 'paid' ? 'bg-[#FF6A18] text-white' : 'bg-[#FF6A18] text-white'}`}>
+  <div key={idx} className="flex bg-white items-center pb-0 flex-col justify-between p-4 border border-gray-300 rounded-lg h-[20rem] shadow-md mb-4">
+    
+  <div className="flex items-center justify-between flex-col h-full">
+  <span className="font-semibold text-center text-2xl">
+  {item.planName}
+  <br />
+  Subscription
+</span>
+      <span className="mr-2 text-3xl">${item.price}</span>
+      <button className={`py-1 px-4 rounded-xl  ${item.paymentStatus === 'Paid' ? 'bg-[#FF6A18] text-[#ffffff]' : 'border border-black bg-white text-black'}`}>
         {item.paymentStatus}
       </button>
-    </span>
-  </div>
 </div>
+<div className=" mt-4">
+      <Image height={85} width={386} src={'/Dashboard/handyman/paymentOptions.svg'} alt={''} />
+    </div>
   </div>
 ))}
-<div className="my-14"><PaymentTable data={data} />
 </div>  
+<div className="my-14"><PaymentTable data={data} />
+
         </div>
       </div>
     );

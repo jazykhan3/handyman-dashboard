@@ -36,6 +36,8 @@ const ICON = (
 export default function Job() {
   const [message, setMessage] = useState<string>("");
   const [offer, setOffer] = useState<boolean>(false);
+  const [showPhoneNumber, setShowPhoneNumber] = useState<boolean>(false);
+
   const [price, setPrice] = useState<string>("$250");
   // console.log(message); //-> user message data
   const router = useRouter();
@@ -153,11 +155,11 @@ export default function Job() {
          </div>
        )}
        <div className="m-2">
-         <button className="bg-orange px-5 py-3 md:px-10 md:py-4 flex justify-center items-center gap-4 rounded-lg text-white text-xl hover:text-gray-100 group w-full">
+         <button onClick={()=>setShowPhoneNumber(true)} className="bg-orange px-5 py-3 md:px-10 md:py-4 flex justify-center items-center gap-4 rounded-lg text-white text-xl hover:text-gray-100 group w-full">
            <div className="bg-white p-1 rounded-full group-hover:bg-gray-200">
-             <IoCallOutline className="text-black" />
+             <IoCallOutline  className="text-black" />
            </div>
-           +49 1234 5678
+           {showPhoneNumber ? '+49 1234 5678' : 'Show Phone Number'}
          </button>
          <div className="mt-5 space-y-5">
            <div>
