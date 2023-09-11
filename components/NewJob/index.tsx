@@ -53,7 +53,7 @@ export default function Job() {
          />
          <section className="py-3 px-4">
            <h1 className="font-bold text-xl text-orange">
-             Demolition & Disposal{" "}
+             Demolition & Disposal
            </h1>
            <h1 className=" t text-black">
              Laying tiles: 25m2; Floor in bathroom, kitchen, hall
