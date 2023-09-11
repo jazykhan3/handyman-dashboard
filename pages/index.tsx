@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div  className=' space-y-20'>
+        <div  className='Container space-y-20'>
             <Header/>
             <Hero/>
         </div>

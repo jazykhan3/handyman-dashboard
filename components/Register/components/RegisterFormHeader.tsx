@@ -7,7 +7,6 @@ export default function RegisterForms({setSelectCard,selectCaredError,selectCard
   const slider = useRef<SliderCrouserl>(null);
   return (
     <div className="px-5">
-        <span className="pl-12 font-semibold text-lg">Role</span>
         <div className="relative  rounded-2xl sm:px-3 sm:mx-5 my-3 mb-5">
           <ServiceCard slider={slider} slidesToShowCustom={7} setSelectCard={setSelectCard} selectCard={selectCard} setSelectCardError={setSelectCardError}/>
           {selectCaredError &&  <p className="absolute text-sm text-red-500  left-0 mt-1">{selectCaredError}</p>}
