@@ -38,7 +38,7 @@ export default function Orders({
          
         </div>
 
-        <StatusButton status={status} />
+        {status == 'complete' && <button className="rounded px-3 py-1 cursor-pointer text-white flex gap-2 items-center capitalize bg-orange">Give feedback</button>}<StatusButton status={status} />
       </section>
       <section className="my-3">
         Demolition & disposal Complete demolition of buildings and structures

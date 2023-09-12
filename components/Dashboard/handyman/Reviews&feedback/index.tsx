@@ -41,7 +41,7 @@ export default function ReviewsFromClients() {
   return (
     <div className="my-2 w-full md:mx-32">
       <h1 className="text-3xl font-bold">
-        <span className="text-orange">Reviews</span> from Clients
+        <span className="text-orange">Voices of experience</span> Reviews and Feedback
       </h1>
       <div className="my-7 mx-5">
         {TestReviewsData.map(({id,paragraph,star})=>(
