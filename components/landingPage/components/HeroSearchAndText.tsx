@@ -65,7 +65,7 @@ export default function HeroSearchAndText({homePageOrNOt}:{homePageOrNOt:boolean
         <div className={`border-2 bg-white py-5 shadow-md rounded-b-md  w-full absolute z-20 top-10 ${userType.length !== 0 && userType[0] !== '' ? 'block':'hidden'}`}>
           {Services.length !== 0 ? (Services.slice(0, 14).map((item) =>(
           <div key={item.id} className="flex justify-start items-center mx-3">
-            <Image src={item.icon} alt={item.shortText} width={20} height={10} />
+            <Image src={item.icon} alt={item.shortText} width={28} height={28} />
             <span className='px-2 py-1 hover:text-gray-700 text-gray-500 cursor-pointer' onClick={()=>setUserType([item.shortText,item.slug])}>
               {item.shortText}
             </span>

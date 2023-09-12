@@ -144,7 +144,7 @@ export default function Job() {
                type="text"
                onChange={(e) => setPrice(e.target.value)}
                value={price}
-               className="text-lg font-semibold w-20 outline-none border border-white hover:border hover:border-gray-400 mt-1 rounded-md"
+               className="text-lg p-1 font-semibold w-20  border border-grey  hover:border hover:border-gray-400 mt-1 rounded-md"
              />
            </section>
            <div className="flex justify-end items-center px-4">

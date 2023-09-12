@@ -16,4 +16,6 @@ interface FilterType  {
   interface FilterPropsType extends OrderTimeProps{
     setFilter: React.Dispatch<React.SetStateAction<FilterType>>;
     filter: FilterType;
+    selectCard?: string[];
+
   }

@@ -10,7 +10,9 @@ const Filters = ({
   filter,
   orderTime,
   setOrderTime,
+  selectCard,
 }: FilterPropsType) => {
+  console.log('select',selectCard)
   const [orderNewOrOld, setOrderNewOrOld] = useState<boolean>(false);
   const [isService, setIsService] = useState<boolean>(false);
   const [selectedService, setSelectedService] = useState<string>('Select Service');
@@ -66,7 +68,7 @@ const Filters = ({
               return(
                 <span
                 key={idx}
-              className=" hover:text-orange  cursor-pointer"
+              className={`hover:text-orange  cursor-pointer ${selectCard?.includes(item?.shortText) && 'text-orange'}`}
               onClick={() => {
                 setIsService(false);
                 setSelectedService(item?.shortText);
@@ -151,7 +153,8 @@ export default function Index({
           filter={filter}
           orderTime={orderTime}
           setOrderTime={setOrderTime}
-        />
+          selectCard={selectCard}
+          />
       </div>
       <div className="relative">
         <div className="mt-3 sm:px-5 py-3">

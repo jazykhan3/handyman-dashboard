@@ -36,7 +36,7 @@ export default function LoginInputs({email,setEmail,setPassword,password,handleS
         <button type="submit" className="w-full bg-orange hover:text-black text-white font-bold py-2.5 px-4 rounded-full focus:outline-none mt-4">
           Login
         </button>
-        <span className="text-center w-full inline-block mt-2">Don’t have an account? <Link href={'/register'} className="text-orange" onClick={()=>document.body.style.overflowY = "scroll"}>Register</Link></span>
+        <span className="text-center w-full inline-block mt-2">Forgot password ? <Link href={''} className="text-orange" onClick={()=>document.body.style.overflowY = "scroll"}>Click here</Link></span>
       </form>
     </div>
   );

@@ -42,7 +42,7 @@ export default function Index() {
       </header>
       <div className="pt-36">
         <div className="text-center text-3xl font-bold mb-11">
-        <h1 className='font-bold text-3xl sm:text-4xl text-Heading'>Discover new orders: <span className='text-orange'>Search and filter options</span></h1>
+        <h1 className='font-bold text-3xl sm:text-4xl text-Heading'>Discover new orders : <span className='text-orange'>Search and filter options</span></h1>
         </div>
         <NewListedOrderPage selectCard={selectCard} setSelectCard={setSelectCard} setFilter={setFilter} filter={filter} orderTime={orderTime} setOrderTime={setOrderTime}/>
       </div>

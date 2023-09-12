@@ -6,6 +6,12 @@ const NavLinks = [
         linkTitle:'Handyman-Service home page',
     },
     {
+        id:8,
+        title:'Business Directory',
+        url:'/businessdirectory',
+        linkTitle:'Click here to see business directory',
+    },
+    {
         id:2,
         title:'Home',
         url:'/',

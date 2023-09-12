@@ -4,7 +4,7 @@ import { ServiceCards } from "@/constants/landingPage/index";
 import ServicePopUpPage from '@/components/landingPage/components/ServicePopUP';
 const Cards = ({icon,shortText,setServicePopUP}:{icon:string;shortText:string;setServicePopUP: React.Dispatch<React.SetStateAction<boolean>>})=>{
   return(
-    <div className={`bg-white cursor-pointer  m-3  px-3 flex justify-center items-center text-center flex-col py-5 rounded-xl shadow-md  h-[8rem] transform hover:scale-105`} onClick={()=>setServicePopUP(true)}>
+    <div className={`bg-white cursor-pointer  m-3  px-3 flex items-center text-center flex-col py-5 rounded-xl shadow-md  h-[8rem] transform hover:scale-105`} onClick={()=>setServicePopUP(true)}>
     <Image src={icon} className="w-10 h-auto mb-4 mt-1" alt="icon" width={100} height={100}/>
     <span className="leading-tight hover:text-orange " title={shortText}>
       {shortText}

@@ -19,10 +19,10 @@ export default function Services() {
     <div className='w-full pt-20 pb-10'>
       <div className='col-4 w-4/4 flex justify-end	'>
         <div className="relative">
-         <div className={`shadow bg-white flex justify-center items-center rounded-md py-3 px-4 gap-4 ${orderNewOrOld && 'text-orange'}`}>
+         {/* <div className={`shadow bg-white flex justify-center items-center rounded-md py-3 px-4 gap-4 ${orderNewOrOld && 'text-orange'}`}>
            <button onClick={()=>setOrderNewOrOld(!orderNewOrOld)}>{orderTime}</button>
            <GoChevronRight className="mt-1 text-xl" />
-         </div>
+         </div> */}
          {orderNewOrOld && 
         <div className={`bg-white shadow  p-3 rounded cursor-pointer  mt-1   absolute flex flex-col space-y-5 z-40`}>
             <span className=" hover:text-orange  cursor-pointer" onClick={()=>{setOrderNewOrOld(false); setOrderTime('Sort by New order')}}>Sort by New order</span>

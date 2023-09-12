@@ -25,7 +25,7 @@ const Service = ({icon,shortText,setSelectCard,selectCard,setSelectCardError,set
 
   };
   return (
-    <div className={`bg-white cursor-pointer  m-3  px-3 flex justify-center items-center text-center flex-col py-5 rounded-xl shadow-md  h-[8rem] transform hover:scale-105 ${!toggle && selectCard && "border-orange border-2 border-opacity-70 text-orange" }`} aria-hidden="true" onClick={() => handleClick()}>
+    <div className={`bg-white cursor-pointer  m-3  px-3 flex  items-center text-center flex-col py-5 rounded-xl shadow-md  h-[8rem] transform hover:scale-105 ${!toggle && selectCard && "border-orange border-2 border-opacity-70 text-orange" }`} aria-hidden="true" onClick={() => handleClick()}>
       <Image src={icon} className="w-10 h-auto mb-4 mt-1" alt="icon" width={100} height={100}/>
       {setSelectCard ? (
         <span className="leading-tight hover:text-orange cursor-pointer" title={shortText}>
@@ -47,7 +47,7 @@ const ServiceForMobile = ({icon,shortText,setServicePopUP,setServiceCardData,slu
     }
   }
   return (
-      <div className={`bg-white cursor-pointer  m-3  px-3 flex justify-center items-center text-center flex-col py-5 rounded-xl shadow-md  h-[8rem] transform hover:scale-105`} onClick={()=>handleClick()}>
+      <div className={`bg-white cursor-pointer  m-3  px-3 flex  items-center text-center flex-col py-5 rounded-xl shadow-md  h-[8rem] transform hover:scale-105`} onClick={()=>handleClick()}>
         <Image src={icon} className="w-10 h-auto mb-4 mt-1" alt="icon" width={100} height={100}/>
         <span className="leading-tight hover:text-orange text-sm sm:text-lg" title={shortText}>
           {shortText}
