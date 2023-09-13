@@ -5,12 +5,7 @@ const NavLinks = [
         url:'/',
         linkTitle:'Handyman-Service home page',
     },
-    {
-        id:8,
-        title:'Business Directory',
-        url:'/businessdirectory',
-        linkTitle:'Click here to see business directory',
-    },
+ 
     {
         id:2,
         title:'Home',
@@ -41,7 +36,13 @@ const NavLinks = [
         url:'/register',
         linkTitle:'Click here to register as craftman',
        
-    }
+    },
+    {
+        id:6,
+        title:'Business Directory',
+        url:'/businessdirectory',
+        linkTitle:'Click here to see business directory',
+    },
 ];
 const ServiceCards = [
     {
