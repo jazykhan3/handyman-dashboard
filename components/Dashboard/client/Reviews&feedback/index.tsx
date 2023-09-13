@@ -30,7 +30,13 @@ const ReviewsSection = ({paragraph,star}:{paragraph:string;star:Number[]}) => {
             ))}
           </div>    
         </div>
-        <p className="font-medium text-gray-600 md:w-2/3 w-full">
+        <p className="flex items-end flex-col font-medium text-gray-600 md:w-2/3 w-full">
+        <div className="my-4">  <button  className=" bg-orange hover:text-black text-white font-bold py-2.5 px-4 rounded-md focus:outline-none mt-4" >
+          Edit Review
+        </button>  <button className=" bg-orange hover:text-black text-white font-bold py-2.5 px-4 rounded-md focus:outline-none mt-4" >
+          Delete Review
+        </button></div>
+
          {paragraph}
         </p>
       </div>

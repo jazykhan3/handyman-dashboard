@@ -16,7 +16,7 @@ export default function FindHanyman() {
       <h1 className=" text-3xl font-bold">Receive free <span className="text-orange">handyman offer</span> </h1>
       <h2 className='ml-2 text-center mt-20 font-bold text-2xl md:text-3xl mb-2'>Select the appropriate service for your job: </h2>
 
-      <div className="flex justify-between items-center lg:mx-20 flex-wrap flex-row-reverse">
+      <div className="flex justify-between items-center lg:mx-20 my-10 flex-wrap flex-row-reverse">
         <Header/>
       </div>
         <div className="mt-3  lg:px-20 py-3 relative">
