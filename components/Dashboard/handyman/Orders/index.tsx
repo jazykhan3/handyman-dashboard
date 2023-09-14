@@ -46,7 +46,7 @@ export default function Index() {
     </h1>
     <div className="flex gap-3 justify-end my-3">
         {statuses.map((status,idx) => (
-          status !== 'complete' && <StatusButton key={idx} status={status} />
+          <StatusButton showIcons={false} key={idx} status={status} />
         ))}
       </div>         <span className='text-[#3849E4] text-sm underline underline-offset-8 flex justify-end'>See more</span>
  </section>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import {AiOutlineEyeInvisible} from 'react-icons/ai';
+import PasswordResetPopup from "./forgetPasswordModal";
 interface LoginInputsPropsType {
   email: string;
   setEmail: React.Dispatch<React.SetStateAction<string>>;
@@ -14,6 +15,15 @@ interface LoginInputsPropsType {
 }
 export default function LoginInputs({email,setEmail,setPassword,password,handleSubmit,emailError,passwordError,setEmailError,setPasswordError}:LoginInputsPropsType) {
   const [passwordViewToogle,setPasswordViewToogle] = useState<Boolean>(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
   return (
     <div className="bg-white p-8 rounded shadow-md w-full sm:w-96">
       <h2 className="text-4xl font-bold text-center mb-14 mt-4">Login</h2>
@@ -36,8 +46,13 @@ export default function LoginInputs({email,setEmail,setPassword,password,handleS
         <button type="submit" className="w-full bg-orange hover:text-black text-white font-bold py-2.5 px-4 rounded-full focus:outline-none mt-4">
           Login
         </button>
-        <span className="text-center w-full inline-block mt-2">Forgot password ? <Link href={''} className="text-orange" onClick={()=>document.body.style.overflowY = "scroll"}>Click here</Link></span>
+        <span className="text-center w-full inline-block mt-2">Forgot password ? <Link href={''} className="text-orange" onClick={openPopup}>Click here</Link></span>
       </form>
+      <PasswordResetPopup
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+        onResetPassword={closePopup}
+      />
     </div>
   );
 }

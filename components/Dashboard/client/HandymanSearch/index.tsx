@@ -82,7 +82,7 @@ const Filters = ({
                 return (
                   <span
                     key={idx}
-                    className=" hover:text-orange  cursor-pointer"
+                    className={`hover:text-orange  cursor-pointer ${item?.shortText == selectedService && 'text-orange'}`}
                     onClick={() => {
                       setIsService(false);
                       setSelectedService(item?.shortText);
@@ -116,23 +116,7 @@ export default function Index({
     <div
       className={`lg:w-[80%]  ${toggleSideBar ? "mx-auto" : "md:mx-32"}  my-12`}
     >
-      <div className="flex w-5/5 p-4 justify-center relative">
-        <span
-          style={{ left: "11%" }}
-          className="absolute inset-y-0 left-0 pl-3 flex items-center"
-        >
-          <FaSearch className="text-gray-400" />
-        </span>
-        <input
-          style={{ height: 48 }}
-          type="text"
-          placeholder="Search by email, company name"
-          className="pl-10 w-3/5 pr-4 py-2 border rounded-l-2xl focus:outline-none focus:ring "
-        />
-        <button className="w-1/5 font-bold bg-orange text-white px-4 py-2 rounded-r-2xl focus:outline-none focus:ring ">
-          Find Handyman{" "}
-        </button>
-      </div>
+  
       <section className="  my-8">
         <h1 className="font-bold text-4xl text-Heading text-center">
           Discover trustworthy{" "}
