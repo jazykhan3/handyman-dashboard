@@ -3,10 +3,12 @@ import { FaCheck, FaCheckCircle, FaEdit, FaTimes, FaTimesCircle, FaTrash } from 
 
 interface StatusButtonProps {
   status: string;
-  showIcons?: Boolean;
+  showIcons?: boolean;
+  showEditIcon?: boolean;
+  onEditClick?: () => void; // Define the onEditClick prop function
 }
 
-const StatusButton: React.FC<StatusButtonProps> = ({ showIcons=true,status }) => {
+const StatusButton: React.FC<StatusButtonProps> = ({ showIcons = true, showEditIcon = true, status, onEditClick }) => {
   const getStatusStyles = () => {
     let styles = 'rounded px-3 py-1 cursor-pointer flex gap-2 items-center capitalize';
     
@@ -16,7 +18,7 @@ const StatusButton: React.FC<StatusButtonProps> = ({ showIcons=true,status }) =>
       styles += ' bg-[#FA4017]';
     } else if (status === 'open') {
       styles += ' bg-[#67B554]';
-    }else if (status === 'accepted') {
+    } else if (status === 'accepted') {
       styles += ' bg-[#fff61880]';
     }
     return styles;
@@ -30,13 +32,26 @@ const StatusButton: React.FC<StatusButtonProps> = ({ showIcons=true,status }) =>
     }
   };
 
+  const handleEditClick = () => {
+    // Call the onEditClick prop function when the edit icon is clicked
+    if (onEditClick) {
+      onEditClick();
+    }
+  };
+
   return (
-    <div className='flex items-center gap-2'>{(status == 'open' &&   showIcons) &&  <span className='flex gap-1'><FaTrash fontSize={20}/><FaEdit fontSize={20}/></span>}<div className={getStatusStyles()}>
-       {status} {getStatusIcon()}
-    </div></div>
-    
+    <div className='flex items-center gap-2'>
+      {showEditIcon && showIcons && (
+        <span className='flex gap-1' onClick={handleEditClick}>
+          <FaTrash  style={{cursor:'pointer'}} fontSize={20}/>
+          <FaEdit style={{cursor:'pointer'}} fontSize={20}/>
+        </span>
+      )}
+      <div className={getStatusStyles()}>
+        {status} {getStatusIcon()}
+      </div>
+    </div>
   );
 };
-
 
 export default StatusButton;
