@@ -2,7 +2,7 @@ import React,{useContext} from 'react'
 import { Context } from "../layout";
 import { statuses } from '@/constants/Dashboard/handyman';
 import StatusButton from '../../handyman/Orders/components/StatusButton';
-import Orders from '../../handyman/Orders/components/Orders';
+import Orders from './components/orders';
 
 
 const TestData = [
@@ -51,7 +51,7 @@ export default function Index() {
       </div>         <span className='text-[#3849E4] text-sm underline underline-offset-8 flex justify-end'>See more</span>
  </section>
         {TestData.map((item,idx)=>(
-                 <div key={idx} className="bg-white rounded-2xl shadow-md  h-[16rem]">
+                 <div key={idx} className="bg-white rounded-2xl shadow-md  ">
 
           <Orders key={item.id} status={item.status} isNew={item.isNew}  title={item.title} paragraph={item.paragraph} price={item.price} postedOn={item.postedOn}/>
           </div>

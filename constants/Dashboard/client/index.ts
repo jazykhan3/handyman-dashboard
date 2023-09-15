@@ -7,7 +7,7 @@ const navigation = [
     },
     {
         id:3,
-        linkText:'Handyman Search',
+        linkText:'Business Directory',
         img:'/Dashboard/client/postedJob.svg',
         href:'/dashboard/client/handymansearch',
     },

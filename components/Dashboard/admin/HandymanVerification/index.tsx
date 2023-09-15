@@ -39,9 +39,6 @@ export default function Index() {
         {TestData.map((item)=>(
           <VerificationCard key={item.id} name={item.name} time={item.time} message={item.message}/>
         ))}
-         {TestData.map((item)=>(
-          <ReviewSection key={item.id} name={item.name} time={item.time} message={item.message}/>
-        ))}
       </div>
     </div>
   );

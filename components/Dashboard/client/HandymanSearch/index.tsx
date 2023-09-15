@@ -8,6 +8,7 @@ import { ServiceCards } from "@/constants/landingPage";
 import { ServiceCard } from "@/components/ServiceCard";
 import { HiLocationMarker } from "react-icons/hi";
 import { AiTwotoneStar } from "react-icons/ai";
+import { useRouter } from "next/router";
 
 export interface EmailErroType {
   password_Error: string;
@@ -111,6 +112,7 @@ export default function Index({
   const slider = useRef<SliderCrouserl>(null);
   const boxCount = 14;
   const boxArray = new Array(boxCount).fill(null);
+  const router = useRouter();
 
   return (
     <div
@@ -152,8 +154,8 @@ return(
             <HiLocationMarker />
             Berlin
           </span>
-          <button className="border border-[#FF6A18] rounded outline-none p-2">
-            Request a Quote
+          <button onClick={()=>{router.push('/craftsman/paul-ben/')}} className="border border-[#FF6A18] rounded outline-none p-2">
+            View Profile
           </button>
         </div>
         <div className="w-3/5  flex flex-col  gap-6">

@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { AiOutlineStar, AiTwotoneStar } from "react-icons/ai";
 import { HiLocationMarker } from "react-icons/hi";
@@ -15,13 +16,14 @@ export default function AcceptOffers({
   price: string;
   posted_on: { date: string; time: string };
 }) {
+  const router = useRouter();
   return (
     <div className="bg-white rounded-md shadow-md">
       <div className="px-10 py-5">
         <section>
           <div className="flex items-center justify-between">
             <img src={icon} alt="" />
-            <button className="border border-orange px-3 py-1 rounded-md">View Profile</button>
+            <button onClick={()=>{router.push('/craftsman/paul-ben/')}} className="border border-orange px-3 py-1 rounded-md">View Profile</button>
           </div>
           <div className="flex gap-2">
             {[...Array(5)].map((a, index) => {

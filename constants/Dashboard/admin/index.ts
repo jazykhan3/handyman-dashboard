@@ -49,11 +49,12 @@ const navigation = {
             href: '/dashboard/admin/statisticsandanalytics',
         }, 
         
-        //     id: 7,
-        //     linkText: 'Un Accepted Offers',
-        //     img: '/Dashboard/admin/unacceptedoffers.svg',
-        //     href: '/dashboard/admin/unacceptedofferscs',
-        // },
+        {
+                id: 12,
+            linkText: 'Reviews and Feedback',
+            img: '/Dashboard/admin/unacceptedoffers.svg',
+            href: '/dashboard/admin/reviewsandfeedback',
+        },
 
     ],
     // handyman: [

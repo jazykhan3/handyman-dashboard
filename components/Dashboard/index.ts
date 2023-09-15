@@ -67,6 +67,9 @@ export {default as JobPostings} from './admin/JobHistroy'
 export {default as Payments} from './admin/Payments';
 //Handyman Verification
 export {default as HandymanVerification} from './admin/HandymanVerification';
+//Reviews
+export {default as AdminReviewsSection} from './admin/Reviews&feedback';
+
 //Login details 
 export {default as LoginDetailsCS} from './admin/LoginDetailsCS';
 //Active listing 
