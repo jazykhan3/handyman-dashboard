@@ -30,6 +30,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -42,6 +44,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -54,6 +58,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -66,6 +72,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -78,6 +86,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -90,6 +100,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -102,6 +114,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -114,6 +128,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -126,6 +142,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -138,6 +156,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -150,6 +170,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -162,6 +184,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -174,6 +198,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -186,6 +212,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -198,6 +226,8 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
+
     },
     {
       Image: "image1.jpg",
@@ -210,6 +240,7 @@ export default function ClientProfile({
       Verified: true,
       Unverified: false,
       Activate: true,
+      phoneNumber:'+93 404 7199546'
     },
     // Add more data objects as needed
   ];
@@ -263,10 +294,9 @@ export default function ClientProfile({
                   <th className="p-4">Email</th>
                   <th className="p-4">IP Address</th>
                   <th className="p-4">Registration Date</th>
-                  <th className="p-4">Uploaded Documents</th>
-                  <th className="p-4">Verified</th>
-                  <th className="p-4">Unverified</th>
-                  <th className="p-4">Activate</th>
+                  <th className="p-4">Phone Number</th>
+                  
+                  <th className="p-4">Active</th>
                 </tr>
               </thead>
               <tbody>
@@ -284,9 +314,7 @@ export default function ClientProfile({
                     <td className="text-center">{item.Email}</td>
                     <td className="text-center">{item.IPAddress}</td>
                     <td className="text-center">{item.RegistrationDate}</td>
-                    <td>{getStatusBadge(item.UploadedDocuments)}</td>
-                    <td>{getStatusBadge(item.Verified)}</td>
-                    <td>{getStatusBadge(item.Unverified)}</td>
+                    <td>{item.phoneNumber}</td>
                     <td>{getStatusBadge(item.Activate)}</td>
                   </tr>
                 ))}

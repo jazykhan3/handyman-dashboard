@@ -3,6 +3,8 @@ import FeedbackPopup from "@/components/Dashboard/handyman/Orders/components/fee
 import moment from "moment";
 import React, { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import EditPopup from "./editPopup";
+import Image from "next/image";
 
 interface OrderItem {
   title: string;
@@ -32,7 +34,28 @@ export default function Orders({
   const [paragraphText, setParagraphText] =useState<string>(paragraph);
   const [newDate, setNewDate] =useState<string>(date);
   const [newTime, setNewTime] =useState<string>(time);
-
+  const TestImageData = [
+    {
+      id: 1,
+      img: "/ProfileTest/crousel/img1.png",
+    },
+    {
+      id: 2,
+      img: "/ProfileTest/crousel/img2.png",
+    },
+    {
+      id: 3,
+      img: "/ProfileTest/crousel/img3.png",
+    },
+    {
+      id: 4,
+      img: "/ProfileTest/crousel/img4.png",
+    },
+    {
+      id: 5,
+      img: "/ProfileTest/crousel/img5.png",
+    },
+  ];
 
   const openPopup = () => {
     setPopupOpen(true);
@@ -41,22 +64,27 @@ export default function Orders({
   const closePopup = () => {
     setPopupOpen(false);
   };
-
+  const handleEditSave = (newTitle: string, newParagraph: string, newDate: string, newTime: string) => {
+    // Handle the save action here with the updated values (newTitle, newParagraph, newDate, newTime)
+    // You can update your state or perform any necessary actions
+    setTitleText(newTitle);
+    setParagraphText(newParagraph);
+    setNewDate(newDate);
+    setNewTime(newTime);
+  };
  
   return (
     <>
       <div className="w-full py-5 px-3">
         <section className="w-full  flex justify-between items-start">
           <div className="ext-xl font-semibold flex flex-col">
+            <div className="flex " >{TestImageData.map(({ id, img }) => (
+          <div key={id} style={{height:80}}>
+            <Image src={img} alt={`crousel ${id}`} width={60} height={60}  style={{maxHeight:60}} className="object-cover  p-2 rounded-2xl"/>
+          </div>
+        ))}</div>
             <h1 className="text-xl font-semibold flex flex-row gap-3 items-end">
-            {isEditing ? (
-          <input
-            type="text"
-            value={newDate}
-            onChange={(e) => setNewDate(e.target.value)}
-            style={{width:'60%'}}
-          />
-        ) : (
+        
           <section className="">
 {moment(newDate, "DD-MM-YYYY").format("D/MMM")}
    {isNew && (
@@ -65,21 +93,12 @@ export default function Orders({
                 </span>
               )}
         </section>
-        )}  
              
             </h1>
-            {isEditing ? (
-          <input
-            type="text"
-            value={newTime}
-            onChange={(e) => setNewTime(e.target.value)}
-            style={{width:'60%'}}
-          />
-        ) : (
+           
           <section className="my-3 font-normal">
             {newTime}
           </section>
-        )}
           </div>
 
           {(status == 'complete' && !isEditing) && (
@@ -98,35 +117,31 @@ export default function Orders({
           {/* Add an edit button */}
         </section>
         {/* Render editable fields if in edit mode */}
-        {isEditing ? (
-          <textarea
-            // type="text"
-            value={titleText}
-            onChange={(e) => setTitleText(e.target.value)}
-            style={{width:'60%'}}
-          />
-        ) : (
+      
           <section className="my-3">
             {title}
           </section>
-        )}
-        {isEditing ? (
-          <textarea
-            // type="text"
-            value={paragraphText}
-            onChange={(e) => setParagraphText(e.target.value)}
-            style={{width:'60%'}}
-          />
-        ) : (
+        
+       
           <section className="my-3">
             {paragraph}
           </section>
-        )}
+        
         <span className="text-6xl font-normal inline-block my-3 float-right">
           {price}
         </span>
       </div>
       <FeedbackPopup isOpen={isPopupOpen} onClose={closePopup} />
+      <EditPopup
+        imagesData={TestImageData}
+        isOpen={isEditing}
+        onClose={()=>setEditing(false)}
+        onSave={handleEditSave}
+        initialTitle={title}
+        initialParagraph={paragraph}
+        initialDate={newDate}
+        initialTime={newTime}
+      />
     </>
   );
 }
