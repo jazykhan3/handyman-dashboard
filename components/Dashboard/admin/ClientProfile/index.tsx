@@ -1,0 +1,12 @@
+import React,{useContext, useState} from 'react'
+import { Context } from "../layout";
+import ClientProfile from './components/ClientProfile'
+export default function Index() {
+  const { toggleSideBar } = useContext(Context);
+  const [search,set_search] = useState<string>(''); //user search query
+  return (
+    <div className={`w-full ${toggleSideBar ? "lg:mx-32" : "mx-0"} my-12`}>
+    <ClientProfile search={search} setSearch={set_search}/>
+  </div>
+  )
+}
