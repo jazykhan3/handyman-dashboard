@@ -5,12 +5,12 @@ const navigation = [
         img:'/Dashboard/client/handyman.svg',
         href:'/dashboard/client/profilemanagement',
     },
-    {
-        id:3,
-        linkText:'Business Directory',
-        img:'/Dashboard/client/postedJob.svg',
-        href:'/dashboard/client/handymansearch',
-    },
+    // {
+    //     id:3,
+    //     linkText:'Business Directory',
+    //     img:'/Dashboard/client/postedJob.svg',
+    //     href:'/dashboard/client/handymansearch',
+    // },
     {
         id:2,
         linkText:'Post a job',

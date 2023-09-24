@@ -28,9 +28,9 @@ export default function Header() {
           <nav className={`lg:flex lg:gap-x-40 space-y-1 lg:space-y-0 absolute bg-gray-50 lg:bg-white sm:px-9 px-2 left-0 right-0 top-16 lg:top-0 lg:relative pb-5 lg:pb-0 ${toggle && 'hidden'}`}>
             <ul className="flex list-none lg:space-x-12 space-y-3 lg:space-y-0 justify-between lg:items-center font-medium flex-col lg:flex-row p-3">
             <li>
-                <Link href={NavLinks[6].url} className="hover:text-orange font-medium" title={NavLinks[6].linkTitle}>
+                {/* <Link href={NavLinks[6].url} className="hover:text-orange font-medium" title={NavLinks[6].linkTitle}>
                   {NavLinks[6].title}
-                </Link>
+                </Link> */}
               </li>
               <li>
                 <Link href={NavLinks[1].url} className="hover:text-orange font-medium" title={NavLinks[1].linkTitle} >
