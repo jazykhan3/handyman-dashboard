@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaStar } from 'react-icons/fa';
 
 interface FeedbackPopupProps {
   isOpen: boolean;
@@ -37,24 +38,38 @@ const FeedbackPopup: React.FC<FeedbackPopupProps> = ({ isOpen, onClose }) => {
             <h2 className="text-xl font-semibold mb-4">Give Feedback</h2>
             <div className="mb-4">
               <label htmlFor="rating" className="block text-gray-600">
-                Rating:
+                Give feedback:
               </label>
-              <div className="stars">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <label key={star} htmlFor={`star${star}`}>
-                    <input
-                      type="radio"
-                      id={`star${star}`}
-                      name="rating"
-                      value={star}
-                      checked={rating === star}
-                      onChange={() => handleRatingChange(star)}
-                      className="sr-only" // Hide the radio input
-                    />
-                    ⭐️ {/* You can use a star emoji or any other star representation here */}
-                  </label>
-                ))}
-              </div>
+              <div className="star-rating">
+      <p className="mb-2 text-xl font-semibold">Rate this service:</p>
+      <div className="flex">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <label
+            key={star}
+            className="text-2xl cursor-pointer"
+            onClick={() => handleRatingChange(star)}
+          >
+            <input
+              type="radio"
+              name="rating"
+              value={star}
+              checked={star === rating}
+              className="sr-only"
+            />
+            {star <= rating ? (
+              <FaStar className="h-8 w-8 text-yellow-400" />
+            ) : (
+              <FaStar className="h-8 w-8 text-gray-300" />
+            )}
+          </label>
+        ))}
+      </div>
+      {rating !== 0 && (
+        <p className="mt-2 text-lg">
+          You rated this service with {rating} stars.
+        </p>
+      )}
+    </div>
             </div>
             <div className="mb-4">
               <label htmlFor="feedback" className="block text-gray-600">

@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { CiLocationOn } from "react-icons/ci";
 import { AiFillStar } from "react-icons/ai";
+import { AllServices } from "@/components/landingPage/components";
 export default function Hero() {
+  const [servicePopUp, setServicePopUP] = useState<boolean>(false);
+  const [serviceCardData, setServiceCardData] = useState<string>('');
+  const Request_a_Quote__PopUp = ({serviceCardData,setServiceCardData}:{setServiceCardData: React.Dispatch<React.SetStateAction<string>>;serviceCardData:string}) => {
+    return (
+      <>
+        <div className="bg-white rounded-md p-3">
+          <h1 className="text-4xl py-5 font-bold">Choose any service</h1>
+          <AllServices />
+  
+        </div>
+      </>
+    );
+  };
   return (
     <div className="w-full flex justify-around items-center relative bg-white rounded-md flex-col lg:flex-row lg:py-10 shadow">
       <div className="absolute w-full md:h-52 h-40 bg-orange top-0 -z-0 rounded-t-md opacity-70" />
@@ -37,10 +51,15 @@ export default function Hero() {
         </div>
       </div>
       <div className="z-10 mb-10 w-full lg:flex lg:justify-end lg:pr-32 lg:mt-20 pl-10">
-        <a href={'#services'}>
+        <a onClick={() => {setServicePopUP(true);setServiceCardData('')}}>
           <button className="bg-white border border-orange px-4 py-2 rounded-lg hover:bg-orange hover:text-white">Request a Quote</button>
         </a>
       </div>
+      {servicePopUp&&(
+              <div className="min-h-screen overflow-scroll w-full fixed inset-0 bg-gray-200 z-50 bg-opacity-50 flex justify-center items-center">
+                <Request_a_Quote__PopUp setServiceCardData={setServiceCardData} serviceCardData={serviceCardData}/>
+              </div>
+            )}
     </div>
   );
 }

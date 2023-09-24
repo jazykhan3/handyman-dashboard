@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { AdminReviewsSection, ClientLayout, ReviewsAndFeedbackClient } from "@/components/Dashboard";
+import { AdminDashBoard, AdminReviewsSection, ClientLayout, ReviewsAndFeedbackClient } from "@/components/Dashboard";
 
 export default function Index() {
   return (
@@ -11,13 +11,13 @@ export default function Index() {
         <meta name="robots" content="noindex, nofollow" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ClientLayout>
+      <AdminDashBoard>
         <main className="h-full bg-mainBackground ">
           <div className="Container pt-24 flex justify-center">
             <AdminReviewsSection />
           </div>
         </main>
-      </ClientLayout>
+      </AdminDashBoard>
     </React.Fragment>
   );
 }

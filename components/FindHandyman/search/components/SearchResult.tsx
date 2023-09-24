@@ -5,8 +5,8 @@ import { CiLocationOn } from "react-icons/ci";
 import { AiFillStar } from "react-icons/ai";
 import ServicePopUpPage from "@/components/landingPage/components/ServicePopUP";
 import Link from "next/link";
-
 import { ServiceCards } from "@/constants/landingPage/index";
+import AllServices from "./AllServices";
 
 type orderTimeType =
   | "Sort by rating"
@@ -41,16 +41,8 @@ const Request_a_Quote__PopUp = ({serviceCardData,setServiceCardData}:{setService
     <>
       <div className="bg-white rounded-md p-3">
         <h1 className="text-4xl py-5 font-bold">Choose any service</h1>
-        <div className="grid grid-cols-2 lg:grid-cols-3">
-        {new_serviceCard.map(({ id, icon, shortText, slug }) => (
-          <div key={id} className={`bg-white flex  items-center flex-col border-2 rounded-xl m-2  h-[8rem] shadow text-center px-3 cursor-pointer ${serviceCardData===shortText && 'border-orange'}`} onClick={()=>setServiceCardData(shortText)}>
-            <Image src={icon} className="w-10 h-auto mb-4 mt-1" alt="icon" width={100} height={100}/>
-            <span className="leading-tight hover:text-orange text-sm sm:text-lg" title={shortText}>
-              {shortText}
-            </span>
-          </div>
-        ))}
-        </div>
+        <AllServices />
+
       </div>
     </>
   );
@@ -59,7 +51,7 @@ const Request_a_Quote__PopUp = ({serviceCardData,setServiceCardData}:{setService
 const Available_handyman = () => {
   const [servicePopUp, setServicePopUP] = useState<boolean>(false);
   const [serviceCardData, setServiceCardData] = useState<string>('');
-
+console.log('serviceCardData',serviceCardData)
   useEffect(() => {
     if (!servicePopUp) {
       document.body.style.overflowY = "scroll";
@@ -104,7 +96,7 @@ const Available_handyman = () => {
           </section>
           <div className=" w-full">
             <div className="flex mt-6 flex-wrap   items-center justify-start ">
-              {Test_CardsData.map((item, index) => (
+              {Test_CardsData?.slice(0,3).map((item, index) => (
                 <Cards key={index} title={item} />
               ))}
             </div>

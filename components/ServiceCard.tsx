@@ -131,8 +131,7 @@ export function ServiceCard({
   };
   return (
     <>
-      <div className="hidden sm:block">
-        <SliderCrouserl {...settings} ref={slider}>
+      <div className="hidden sm:flex">
           {ServiceCards?.slice(0, 3)?.map(({ id, icon, shortText, slug }) => (
             <Service
               key={id}
@@ -146,10 +145,9 @@ export function ServiceCard({
               setServiceCardData={setServiceCardData}
             />
           ))}
-        </SliderCrouserl>
       </div>
       <div className="block sm:hidden">
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-1">
           {ServiceCards.slice(0, !toggleAllServicesOnMB ? 14 : 39).map(({ id, icon, shortText, slug }) => (
             <ServiceForMobile
               key={id}

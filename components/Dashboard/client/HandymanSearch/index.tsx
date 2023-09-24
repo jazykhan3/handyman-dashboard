@@ -9,6 +9,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { HiLocationMarker } from "react-icons/hi";
 import { AiTwotoneStar } from "react-icons/ai";
 import { useRouter } from "next/router";
+import { AllServices } from "@/components/landingPage/components";
 
 export interface EmailErroType {
   password_Error: string;
@@ -113,7 +114,19 @@ export default function Index({
   const boxCount = 14;
   const boxArray = new Array(boxCount).fill(null);
   const router = useRouter();
-
+  const [servicePopUp, setServicePopUP] = useState<boolean>(false);
+  const [serviceCardData, setServiceCardData] = useState<string>('');
+  const Request_a_Quote__PopUp = ({serviceCardData,setServiceCardData}:{setServiceCardData: React.Dispatch<React.SetStateAction<string>>;serviceCardData:string}) => {
+    return (
+      <>
+        <div className="bg-white rounded-md p-3">
+          <h1 className="text-4xl py-5 font-bold">Choose any service</h1>
+          <AllServices />
+  
+        </div>
+      </>
+    );
+  };
   return (
     <div
       className={`lg:w-[80%]  ${toggleSideBar ? "mx-auto" : "md:mx-32"}  my-12`}
@@ -185,7 +198,7 @@ return(
             <span className="text-orange">read more</span>
           </div>
           <div className="flex gap-6 flex-wrap">
-            {boxArray.map((_, index) => (
+            {boxArray?.slice(0,3)?.map((_, index) => (
               <div
                 key={index}
                 style={{ width: 55, height: 47, fontSize: 8, padding: 10 }}
@@ -194,8 +207,17 @@ return(
                 Demolition contractor
               </div>
             ))}
-          </div>
+                    </div>
         </div>
+        <button className="bg-white border border-orange  p-2 rounded-lg hover:bg-orange hover:text-white ml-1 mt-4 " style={{height:'fit-content'}} onClick={() => {setServicePopUP(true);setServiceCardData('')}}>
+              Request a Quote
+            </button>
+            {servicePopUp&&(
+              <div className="min-h-screen overflow-scroll w-full fixed inset-0 bg-gray-200 z-50 bg-opacity-50 flex justify-center items-center">
+                <Request_a_Quote__PopUp setServiceCardData={setServiceCardData} serviceCardData={serviceCardData}/>
+              </div>
+            )}
+
       </section>
 )
      })}

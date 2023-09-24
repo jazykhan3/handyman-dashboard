@@ -137,7 +137,7 @@ export default function Service({setServicePopUP,serviceCardPopUPData,setSentDat
               </button>
             ) : (
               <button onClick={handleSendJOB} className="border border-orange md:px-8 px-6 md:py-2 py-1 rounded-lg shadow bg-orange text-white">
-                Find Handyman
+                 Post Job
               </button>
             )}
           </div>
