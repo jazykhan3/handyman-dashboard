@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { useState }  from "react";
-=======
-import React  from "react";
->>>>>>> 75dcd7bab7d639fc4eb1fe7a834e580f016aa337
 import { AiFillStar } from "react-icons/ai";
 const TestReviewsData = [
   {
@@ -22,7 +18,6 @@ const TestReviewsData = [
   },
 ]
 const ReviewsSection = ({paragraph,star}:{paragraph:string;star:Number[]}) => {
-<<<<<<< HEAD
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [text, setText] = useState('');
   
@@ -40,9 +35,6 @@ const ReviewsSection = ({paragraph,star}:{paragraph:string;star:Number[]}) => {
     setIsPopupOpen(false);
   };
   return (<>
-=======
-  return (
->>>>>>> 75dcd7bab7d639fc4eb1fe7a834e580f016aa337
     <div className="w-full  bg-white rounded-lg shadow my-4 ">
       <div className="flex md:justify-around md:items-center gap-16 px-7 pt-10 pb-20 flex-col md:flex-row">
         <div className="flex flex-col justify-center items-center space-y-3">
@@ -55,7 +47,6 @@ const ReviewsSection = ({paragraph,star}:{paragraph:string;star:Number[]}) => {
         </div>
         <p className="font-medium text-gray-600 md:w-2/3 w-full">
          {paragraph}
-<<<<<<< HEAD
          <button className="rounded-xl mt-3 float-right bg-orange text-white p-3"onClick={togglePopup}>Reclaim</button>
         </p>
       </div>
@@ -79,12 +70,6 @@ const ReviewsSection = ({paragraph,star}:{paragraph:string;star:Number[]}) => {
         </div>
       </div>
     )}</>
-=======
-         <button className="rounded-xl mt-3 float-right bg-orange text-white p-3">Reclaim</button>
-        </p>
-      </div>
-    </div>
->>>>>>> 75dcd7bab7d639fc4eb1fe7a834e580f016aa337
   );
 };
 export default function ReviewsFromClients() {
