@@ -30,7 +30,7 @@ const TestData = [
       day:'Tue',
       time:'9:45 AM'
     },
-    status:'complete',
+    status:'accepted',
     isNew:true
   }
 ]
@@ -46,8 +46,8 @@ export default function Index() {
     Customer projects at a glance     </span>
     </h1>
     <div className="flex gap-3 justify-end my-3">
-        {statuses.map((status,idx) => (
-          <StatusButton key={idx} status={status} />
+        {statuses?.slice(1,4)?.map((status,idx) => (
+          <StatusButton showIcons={false} key={idx} status={status} />
         ))}
       </div>         <span className='text-orange text-sm underline underline-offset-8 flex justify-end'>See more</span>
  </section>

@@ -1,4 +1,4 @@
-import React  from "react";
+import React, { useState }  from "react";
 import { AiFillStar } from "react-icons/ai";
 const TestReviewsData = [
   {
@@ -18,7 +18,23 @@ const TestReviewsData = [
   },
 ]
 const ReviewsSection = ({paragraph,star}:{paragraph:string;star:Number[]}) => {
-  return (
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [text, setText] = useState('');
+  
+  const handleTextAreaChange = (e:any) => {
+    setText(e.target.value);
+  };
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+
+  const handleSubmit = () => {
+    // Handle the form submission here
+    // You can access the input value from your state or form refs
+    // For simplicity, let's just close the popup in this example
+    setIsPopupOpen(false);
+  };
+  return (<>
     <div className="w-full  bg-white rounded-lg shadow my-4 ">
       <div className="flex md:justify-around md:items-center gap-16 px-7 pt-10 pb-20 flex-col md:flex-row">
         <div className="flex flex-col justify-center items-center space-y-3">
@@ -31,10 +47,29 @@ const ReviewsSection = ({paragraph,star}:{paragraph:string;star:Number[]}) => {
         </div>
         <p className="font-medium text-gray-600 md:w-2/3 w-full">
          {paragraph}
-         <button className="rounded-xl mt-3 float-right bg-orange text-white p-3">Reclaim</button>
+         <button className="rounded-xl mt-3 float-right bg-orange text-white p-3"onClick={togglePopup}>Reclaim</button>
         </p>
       </div>
     </div>
+    {isPopupOpen && (
+      <div className="fixed inset-0 border  flex items-center justify-center z-50">
+        <div className="bg-white p-10 shadow-lg rounded-lg">
+          <h2 className="text-lg font-semibold mb-4">Reclaim</h2>
+          <div className="flex flex-col justify-between align-center"><textarea
+              className="border rounded p-2 mb-4"
+              value={text}
+              onChange={handleTextAreaChange}
+            placeholder="Enter something"
+          />
+          <button
+            className="bg-orange text-white rounded mt-4 px-4 py-2"
+            onClick={handleSubmit}
+          >
+            Submit
+          </button></div>
+        </div>
+      </div>
+    )}</>
   );
 };
 export default function ReviewsFromClients() {

@@ -3,9 +3,10 @@ import { FaCheck, FaCheckCircle, FaEdit, FaTimes, FaTimesCircle, FaTrash } from 
 
 interface StatusButtonProps {
   status: string;
+  showIcons:boolean;
 }
 
-const StatusButton: React.FC<StatusButtonProps> = ({ status }) => {
+const StatusButton: React.FC<StatusButtonProps> = ({ status,showIcons=true }) => {
   const getStatusStyles = () => {
     let styles = 'rounded px-3 py-1 cursor-pointer flex gap-2 items-center capitalize';
     
@@ -30,7 +31,7 @@ const StatusButton: React.FC<StatusButtonProps> = ({ status }) => {
   };
 
   return (
-    <div className='flex items-center gap-2'>{status == 'open' && <span className='flex gap-1'><FaTrash fontSize={20}/><FaEdit fontSize={20}/></span>}<div className={getStatusStyles()}>
+    <div className='flex items-center gap-2'>{(status == 'open' && showIcons) && <span className='flex gap-1'><FaTrash fontSize={20}/><FaEdit fontSize={20}/></span>}<div className={getStatusStyles()}>
        {status} {getStatusIcon()}
     </div></div>
     

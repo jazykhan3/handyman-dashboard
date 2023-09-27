@@ -3,10 +3,14 @@ import Image from "next/image";
 import { CiLocationOn } from "react-icons/ci";
 import { AiFillStar } from "react-icons/ai";
 import { AllServices } from "@/components/landingPage/components";
+import { IoCallOutline } from "react-icons/io5";
 export default function Hero() {
   const [servicePopUp, setServicePopUP] = useState<boolean>(false);
   const [serviceCardData, setServiceCardData] = useState<string>('');
-  const Request_a_Quote__PopUp = ({serviceCardData,setServiceCardData}:{setServiceCardData: React.Dispatch<React.SetStateAction<string>>;serviceCardData:string}) => {
+  const [showPhoneNumber, setShowPhoneNumber] = useState<boolean>(false);
+
+  const Request_a_Quote__PopUp = ({serviceCardData,showArrows,setServiceCardData}:{setServiceCardData: React.Dispatch<React.SetStateAction<string>>;serviceCardData:string;showArrows:Boolean}) => {
+    
     return (
       <>
         <div className="bg-white rounded-md p-3">
@@ -24,7 +28,7 @@ export default function Hero() {
         <div className="flex justify-center items-center text-center flex-col mt-20 lg:mt-16 mb-6">
           <Image src={"/ProfileTest/userTest.png"} alt="user name" width={100} height={100} className="w-[8rem] sm:w-auto h-auto"/>
           <div>
-            <div className="flex justify-center items-center text-center mb-1 ">
+            <div className="flex justify-center flex-col items-center text-center mb-1 ">
               <h1 className="font-bold text-2xl">BuilderBen</h1>
               <div className="flex ml-3 items-center justify-center">
                 <Image src={"/ProfileTest/verified.svg"} alt="verifed" width={100} height={100} className="w-auto h-auto"/>
@@ -47,6 +51,12 @@ export default function Hero() {
               <CiLocationOn />
               <span>Bern</span>
             </div>
+            <button onClick={()=>setShowPhoneNumber(true)} className="bg-orange px-3 py-3 md:px-6 md:py-2 flex justify-center items-center gap-4 rounded-lg text-white text-xl hover:text-gray-100 group w-full">
+           <div className="bg-white p-1 rounded-full group-hover:bg-gray-200">
+             <IoCallOutline  className="text-black" />
+           </div>
+           {showPhoneNumber ? '+49 1234 5678' : 'Show Phone Number'}
+         </button>
           </div>
         </div>
       </div>
@@ -57,7 +67,7 @@ export default function Hero() {
       </div>
       {servicePopUp&&(
               <div className="min-h-screen overflow-scroll w-full fixed inset-0 bg-gray-200 z-50 bg-opacity-50 flex justify-center items-center">
-                <Request_a_Quote__PopUp setServiceCardData={setServiceCardData} serviceCardData={serviceCardData}/>
+                <Request_a_Quote__PopUp showArrows={false} setServiceCardData={setServiceCardData} serviceCardData={serviceCardData}/>
               </div>
             )}
     </div>

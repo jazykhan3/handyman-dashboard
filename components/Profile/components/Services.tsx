@@ -18,7 +18,7 @@ const Cards = ({icon,shortText,setServicePopUP}:{icon:string;shortText:string;se
   )
 }
 
-export default function Services() {
+export default function Services({ count = 20, showArrows = true }) {
   const [toggleAllServicesOnMB, setToggleAllServicesOnMB] = useState<boolean>(false);
     const [servicePopUp, setServicePopUP] = useState<boolean>(false);
     const [serviceCardData, setServiceCardData] = useState<string[]>([]);
@@ -38,15 +38,15 @@ export default function Services() {
       <div className="w-full ">
       <div className="relative">
         <div className="mt-3 sm:px-5 py-3">
-        <ServiceCard slider={slider} slidesToShowCustom={7} setServicePopUP={setServicePopUP} setServiceCardData={setServiceCardData}/>
-          <div className="text-4xl sm:flex justify-between items-center top-[45%] absolute md:-left-2 md:-right-2 right-0 left-0 hidden" aria-hidden="true">
+        <ServiceCard count={count} slider={slider} slidesToShowCustom={7} setServicePopUP={setServicePopUP} setServiceCardData={setServiceCardData}/>
+          {showArrows && <div className="text-4xl sm:flex justify-between items-center top-[45%] absolute md:-left-2 md:-right-2 right-0 left-0 hidden" aria-hidden="true">
             <button className="cursor-pointer bg-orange rounded-full text-white" onClick={() => slider.current?.slickPrev()} aria-label="Left shift" aria-hidden="true">
               <IoIosArrowBack className="text-[48px] sm:text-[30px]" />
             </button>
             <button className="cursor-pointer bg-orange rounded-full text-white" onClick={() => slider.current?.slickNext()} aria-label="right shift" aria-hidden="true">
               <IoIosArrowForward className="text-[48px] sm:text-[30px]" />
             </button>
-          </div>
+          </div>}
         </div>
       </div>
       {servicePopUp && (

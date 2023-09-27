@@ -14,6 +14,7 @@ interface OrderItem {
   };
   isNew: boolean;
   status: string;
+  listingId:number;
 }
 export default function Orders({
   title,
@@ -22,6 +23,7 @@ export default function Orders({
   postedOn,
   isNew,
   status,
+  listingId,
 }: OrderItem) {
   const { date, time } = postedOn;
   const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
@@ -35,8 +37,8 @@ export default function Orders({
   };
   return (
     <><div className="w-full py-5 px-3">
-    <section className="w-full  flex justify-between items-center">
-      <div className="ext-xl font-semibold flex flex-col">
+    <section className="w-5/5  flex justify-between items-center">
+      <div className="w-1/5 text-xl font-semibold flex flex-col">
         <h1 className="text-xl font-semibold flex flex-row gap-3 items-end">
           {moment(date, "DD-MM-YYYY").format("D/MMM")}
           {isNew && (
@@ -48,7 +50,7 @@ export default function Orders({
        
       </div>
 
-      {status == 'complete' && <button onClick={openPopup} className="rounded px-3 py-1 cursor-pointer text-white flex gap-2 items-center capitalize bg-orange">Give feedback</button>}<StatusButton status={status} />
+      <div className="w-4/5 flex justify-between items-center"><div className="text-normal">{title}</div><div className="font-bold">{`listing ID: ${listingId}`}</div><StatusButton showIcons={status=='accepted' ? false : true} status={status} /></div>
     </section>
     <section className="my-3">
       Demolition & disposal Complete demolition of buildings and structures

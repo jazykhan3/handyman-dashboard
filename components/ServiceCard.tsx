@@ -94,6 +94,7 @@ export function ServiceCard({
   setSelectCardError,
   setServicePopUP,
   setServiceCardData,
+  count
 }: ServiceCardProps) {
   const [toggleAllServicesOnMB, setToggleAllServicesOnMB] = useState<boolean>(false);
   const settings = {
@@ -131,8 +132,10 @@ export function ServiceCard({
   };
   return (
     <>
-      <div className="hidden sm:flex">
-          {ServiceCards?.slice(0, 3)?.map(({ id, icon, shortText, slug }) => (
+      <div className="hidden sm:block">
+      <SliderCrouserl {...settings} ref={slider}>
+
+          {ServiceCards?.slice(0, count)?.map(({ id, icon, shortText, slug }) => (
             <Service
               key={id}
               icon={icon && icon}
@@ -145,6 +148,8 @@ export function ServiceCard({
               setServiceCardData={setServiceCardData}
             />
           ))}
+                  </SliderCrouserl >
+
       </div>
       <div className="block sm:hidden">
         <div className="grid grid-cols-1">

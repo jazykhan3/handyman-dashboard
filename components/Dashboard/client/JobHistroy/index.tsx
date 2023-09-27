@@ -17,7 +17,7 @@ const TestData = [
       day:'Wed',
     },
     status:'open',
-    isNew:false,
+    isNew:true,
   },
   {
     id:2,
@@ -29,8 +29,8 @@ const TestData = [
       day:'Tue',
       time:'9:45 AM'
     },
-    status:'complete',
-    isNew:true
+    status:'accepted',
+    isNew:false
   }
 ]
 export default function Index() {
@@ -45,7 +45,7 @@ export default function Index() {
     Discover your job history      </span>
     </h1>
     <div className="flex gap-3 justify-end my-3">
-        {statuses.map((status,idx) => (
+        {statuses?.slice(1,4).map((status,idx) => (
           <StatusButton key={idx} showIcons={false} status={status} />
         ))}
       </div>         <span className='text-[#3849E4] text-sm underline underline-offset-8 flex justify-end'>See more</span>

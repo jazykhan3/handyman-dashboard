@@ -48,7 +48,7 @@ const StatusButton: React.FC<StatusButtonProps> = ({ showIcons = true, showEditI
         </span>
       )}
       <div className={getStatusStyles()}>
-        {status} {getStatusIcon()}
+        {status == 'open' && !window.location.pathname.includes('/client') ? 'Request Open' : status} {getStatusIcon()}
       </div>
     </div>
   );

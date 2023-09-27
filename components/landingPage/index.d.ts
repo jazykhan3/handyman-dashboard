@@ -9,6 +9,7 @@ interface CommonProps {
   interface ServiceCardProps extends CommonProps {
     slider: React.MutableRefObject<SliderCrouserl | null>;
     slidesToShowCustom: number;
+    count?:number
   }
   
   type ServicePropsType = CommonProps & {

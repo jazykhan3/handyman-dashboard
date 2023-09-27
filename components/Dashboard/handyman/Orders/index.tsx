@@ -8,20 +8,23 @@ import StatusButton from './components/StatusButton';
 const TestData = [
   {
     id:1,
-    title:'Laying tiles: 25m2; Floor in bathroom, kitchen, hall, 25km, Berlin',
+    title:'Floor Tiling',
     paragraph:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text',
     price:'$250',
+    listingId:235235235,
     postedOn:{
       date:'23-05-2023',
       time:'9:45 AM',
       day:'Wed',
     },
     status:'open',
-    isNew:false,
+    isNew:true,
   },
   {
     id:2,
-    title:'Laying tiles: 25m2; Floor in bathroom, kitchen, hall, 25km, Berlin',
+
+    title:'Done electrical wiring of building',
+    listingId:238785235,
     paragraph:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text',
     price:'$250',
     postedOn:{
@@ -29,7 +32,7 @@ const TestData = [
       day:'Tue',
       time:'9:45 AM'
     },
-    status:'complete',
+    status:'accepted',
     isNew:true
   }
 ]
@@ -45,7 +48,7 @@ export default function Index() {
     Discover your job history      </span>
     </h1>
     <div className="flex gap-3 justify-end my-3">
-        {statuses.map((status,idx) => (
+        {statuses?.slice(1,4)?.map((status,idx) => (
           <StatusButton showIcons={false} key={idx} status={status} />
         ))}
       </div>         <span className='text-[#3849E4] text-sm underline underline-offset-8 flex justify-end'>See more</span>
@@ -53,7 +56,7 @@ export default function Index() {
         {TestData.map((item,idx)=>(
                  <div key={idx} className="bg-white rounded-2xl shadow-md  h-[16rem]">
 
-          <Orders key={item.id} status={item.status} isNew={item.isNew}  title={item.title} paragraph={item.paragraph} price={item.price} postedOn={item.postedOn}/>
+          <Orders key={item.id} status={item.status} listingId={item?.listingId} isNew={item.isNew}  title={item.title} paragraph={item.paragraph} price={item.price} postedOn={item.postedOn}/>
           </div>
 
         ))}

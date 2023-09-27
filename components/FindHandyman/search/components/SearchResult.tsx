@@ -100,9 +100,9 @@ console.log('serviceCardData',serviceCardData)
                 <Cards key={index} title={item} />
               ))}
             </div>
-            <button className="bg-white border border-orange  p-2 rounded-lg hover:bg-orange hover:text-white ml-1 mt-4 absolute right-0 top-0" onClick={() => {setServicePopUP(true);setServiceCardData('')}}>
+            {/* <button className="bg-white border border-orange  p-2 rounded-lg hover:bg-orange hover:text-white ml-1 mt-4 absolute right-0 top-0" onClick={() => {setServicePopUP(true);setServiceCardData('')}}>
               Request a Quote
-            </button>
+            </button> */}
             {servicePopUp&&(
               <div className="min-h-screen overflow-scroll w-full fixed inset-0 bg-gray-200 z-50 bg-opacity-50 flex justify-center items-center">
                 <Request_a_Quote__PopUp setServiceCardData={setServiceCardData} serviceCardData={serviceCardData}/>
