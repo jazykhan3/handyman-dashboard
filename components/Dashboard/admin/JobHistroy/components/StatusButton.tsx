@@ -3,7 +3,7 @@ import { FaCheck, FaCheckCircle, FaEdit, FaTimes, FaTimesCircle, FaTrash } from 
 
 interface StatusButtonProps {
   status: string;
-  showIcons:boolean;
+  showIcons?:boolean;
 }
 
 const StatusButton: React.FC<StatusButtonProps> = ({ status,showIcons=true }) => {
