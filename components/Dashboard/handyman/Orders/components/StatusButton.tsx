@@ -38,6 +38,7 @@ const StatusButton: React.FC<StatusButtonProps> = ({ showIcons = true, showEditI
       onEditClick();
     }
   };
+  const isClientSide = typeof window !== 'undefined';
 
   return (
     <div className='flex items-center gap-2'>
@@ -48,7 +49,7 @@ const StatusButton: React.FC<StatusButtonProps> = ({ showIcons = true, showEditI
         </span>
       )}
       <div className={getStatusStyles()}>
-        {status == 'open' && !window.location.pathname.includes('/client') ? 'Request Open' : status} {getStatusIcon()}
+        {(status == 'open' && isClientSide && !window.location.pathname.includes('/client') )? 'Request Open' : status} {getStatusIcon()}
       </div>
     </div>
   );
