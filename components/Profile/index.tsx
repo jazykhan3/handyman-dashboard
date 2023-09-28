@@ -7,7 +7,7 @@ export default function Index() {
   return (
     <div className='pt-28 w-full'>
         <Hero/>
-        <Services count={3} showArrows={false} />
+        <Services count={3} showArrows={false} showIcons = {false} />
         <AboutBusiness/>
         <ReviewsFromClients/>
     </div>

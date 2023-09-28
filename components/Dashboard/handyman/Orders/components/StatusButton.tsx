@@ -42,7 +42,7 @@ const StatusButton: React.FC<StatusButtonProps> = ({ showIcons = true, showEditI
 
   return (
     <div className='flex items-center gap-2'>
-      {showEditIcon && showIcons && (
+      {((showEditIcon && showIcons) || (status =='open' && showIcons)) && (
         <span className='flex gap-1' onClick={handleEditClick}>
           <FaTrash  style={{cursor:'pointer'}} fontSize={20}/>
           <FaEdit style={{cursor:'pointer'}} fontSize={20}/>

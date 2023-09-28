@@ -51,12 +51,10 @@ export default function Hero() {
               <CiLocationOn />
               <span>Bern</span>
             </div>
-            <button onClick={()=>setShowPhoneNumber(true)} className="bg-orange px-3 py-3 md:px-6 md:py-2 flex justify-center items-center gap-4 rounded-lg text-white text-xl hover:text-gray-100 group w-full">
-           <div className="bg-white p-1 rounded-full group-hover:bg-gray-200">
-             <IoCallOutline  className="text-black" />
+            <div className="bg-white p-1 flex items-center rounded-full group-hover:bg-gray-200">
+             <IoCallOutline  className="text-black mr-2" />            { '+49 1234 5678' }
+
            </div>
-           {showPhoneNumber ? '+49 1234 5678' : 'Show Phone Number'}
-         </button>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ const TestData = [
       day:'Wed',
     },
     status:'open',
-    isNew:true,
+    isNew:false,
   },
   {
     id:2,
@@ -33,7 +33,7 @@ const TestData = [
       time:'9:45 AM'
     },
     status:'accepted',
-    isNew:true
+    isNew:false
   }
 ]
 export default function Index() {
@@ -51,7 +51,7 @@ export default function Index() {
         {statuses?.slice(1,4)?.map((status,idx) => (
           <StatusButton showIcons={false} key={idx} status={status} />
         ))}
-      </div>         <span className='text-[#3849E4] text-sm underline underline-offset-8 flex justify-end'>See more</span>
+      </div>         
  </section>
         {TestData.map((item,idx)=>(
                  <div key={idx} className="bg-white rounded-2xl shadow-md  h-[16rem]">

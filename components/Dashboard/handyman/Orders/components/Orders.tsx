@@ -50,7 +50,7 @@ export default function Orders({
        
       </div>
 
-      <div className="w-4/5 flex justify-between items-center"><div className="text-normal">{title}</div><div className="font-bold">{`listing ID: ${listingId}`}</div><StatusButton showIcons={status=='accepted' ? false : true} status={status} /></div>
+      <div className="w-4/5 flex justify-between items-center"><div className="text-normal">{title}</div><div className="font-bold">{`listing ID: ${listingId}`}</div><div className="flex items-center gap-3">{status =='open' && <button className="bg-orange px-2 py-1 rounded">Withdraw Offer</button>}<StatusButton showIcons={(status=='accepted') ? false : true} status={status} /></div></div>
     </section>
     <section className="my-3">
       Demolition & disposal Complete demolition of buildings and structures

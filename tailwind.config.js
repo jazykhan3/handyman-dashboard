@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      margin: {
+        '-45%': '-45%',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

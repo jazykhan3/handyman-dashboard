@@ -14,6 +14,7 @@ const Service = ({
   setServicePopUP,
   setServiceCardData,
   slug,
+  showIcons =true
 }: ServicePropsType) => {
   const [toggle, setToggle] = useState<boolean>(true);
   const addToSelectCard = (shortText: string) => {
@@ -32,15 +33,17 @@ const Service = ({
       setServiceCardData([shortText, slug]);
     }
   };
+  console.log('showICCAAA',showIcons)
   return (
     <div
       className={`bg-white cursor-pointer m-3 px-3 flex items-center text-center flex-col py-5 rounded-xl shadow-md h-[8rem] transform hover:scale-105 ${
         !toggle && selectCard && "border-orange border-2 border-opacity-70 text-orange"
       }`}
+      style={!showIcons ? { height:'fit-content'}:{}}
       aria-hidden="true"
-      onClick={() => handleClick()}
+      onClick={() => {showIcons &&handleClick()}}
     >
-      <Image src={icon} className="w-10 h-auto mb-4 mt-1" alt="icon" width={100} height={100} />
+      {showIcons && <Image src={icon} className="w-10 h-auto mb-4 mt-1" alt="icon" width={100} height={100} />}
       {setSelectCard ? (
         <span className="leading-tight hover:text-orange cursor-pointer" title={shortText}>
           {shortText}
@@ -94,7 +97,8 @@ export function ServiceCard({
   setSelectCardError,
   setServicePopUP,
   setServiceCardData,
-  count
+  count,
+  showIcons
 }: ServiceCardProps) {
   const [toggleAllServicesOnMB, setToggleAllServicesOnMB] = useState<boolean>(false);
   const settings = {
@@ -104,13 +108,15 @@ export function ServiceCard({
     slidesToShow: slidesToShowCustom,
     slidesToScroll: slidesToShowCustom,
     initialSlide: 0,
-    rows: 2,
+    rows: showIcons ? 2 : 1, // Conditionally set rows based on showIcons
+    
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
+          rows: showIcons ? 2 : 2, // Conditionally set rows for this breakpoint
         },
       },
       {
@@ -119,6 +125,7 @@ export function ServiceCard({
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
+          rows: showIcons ? 2 : 2, // Conditionally set rows for this breakpoint
         },
       },
       {
@@ -126,17 +133,20 @@ export function ServiceCard({
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          rows: showIcons ? 2 : 2, // Conditionally set rows for this breakpoint
         },
       },
     ],
   };
+  const leftAlignedClass = showIcons ? '' : 'text-left';
   return (
     <>
-      <div className="hidden sm:block">
-      <SliderCrouserl {...settings} ref={slider}>
+      <div className={`hidden sm:block ${leftAlignedClass}`}>
+      <SliderCrouserl className={`${(showIcons || showIcons == undefined) ? '' : 'ml-[-45%]'}`}  {...settings} ref={slider}>
 
           {ServiceCards?.slice(0, count)?.map(({ id, icon, shortText, slug }) => (
             <Service
+              showIcons={showIcons}
               key={id}
               icon={icon && icon}
               shortText={shortText}

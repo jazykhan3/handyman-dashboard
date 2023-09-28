@@ -36,7 +36,10 @@ const ReviewsSection = ({paragraph,star}:{paragraph:string;star:Number[]}) => {
   };
   return (<>
     <div className="w-full  bg-white rounded-lg shadow my-4 ">
+    <span className="flex item-center justify-between pt-3 mx-4">        <div className="font-bold flex flex-col gap-2"> 12/May/24<p className="font-normal">10:45 am</p></div><div className="text-normal">Done electrical wiring of building</div><div className="font-bold">listing ID: 1232342</div>
+</span>
       <div className="flex md:justify-around md:items-center gap-16 px-7 pt-10 pb-20 flex-col md:flex-row">
+    
         <div className="flex flex-col justify-center items-center space-y-3">
           <span>{star.length}.0 stars</span>
           <div className="flex">

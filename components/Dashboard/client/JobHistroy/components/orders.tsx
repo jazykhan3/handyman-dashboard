@@ -111,7 +111,8 @@ export default function Orders({
           )}
          {isEditing ? <button className="rounded px-3 py-1 cursor-pointer text-white flex gap-2 items-center capitalize bg-orange"  onClick={()=>setEditing(false)} >Submit</button>: <StatusButton
             status={status}
-            // showIcons={!isEditing}
+            showIcons={true}
+            showEditIcon={false}
             onEditClick={()=>setEditing(true)} // Hide icons when editing is active
           />}
           {/* Add an edit button */}
