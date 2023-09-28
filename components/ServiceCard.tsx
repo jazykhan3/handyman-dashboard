@@ -100,6 +100,7 @@ export function ServiceCard({
   count,
   showIcons
 }: ServiceCardProps) {
+  console.log('showIcons',showIcons)
   const [toggleAllServicesOnMB, setToggleAllServicesOnMB] = useState<boolean>(false);
   const settings = {
     infinite: false,
@@ -108,7 +109,7 @@ export function ServiceCard({
     slidesToShow: slidesToShowCustom,
     slidesToScroll: slidesToShowCustom,
     initialSlide: 0,
-    rows: showIcons ? 2 : 1, // Conditionally set rows based on showIcons
+    rows: (showIcons || showIcons == undefined) ? 2 : 1, // Conditionally set rows based on showIcons
     
     responsive: [
       {
