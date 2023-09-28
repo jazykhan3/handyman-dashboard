@@ -68,7 +68,7 @@ export default function Search() {
                 className="bg-orange py-3 shadow-md px-4 text-white rounded-r-md hover:text-black"
                 onClick={FindService}
               >
-                Find Service
+                Post Job
               </button>
             </div>
             <div

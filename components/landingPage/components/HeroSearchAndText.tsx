@@ -59,7 +59,7 @@ export default function HeroSearchAndText({homePageOrNOt}:{homePageOrNOt:boolean
         <div className="flex w-full  shadow-md   z-30 absolute rounded-md">
           <input type="text" placeholder="e.g   Painter" name="search_service" className="grow px-3 py-3  border-2 border-r-0 rounded-l-md outline-none" title="Search our services" onChange={HandleChange} value={userType[0]}/>
           <button className="bg-orange py-3 shadow-md px-4 text-white rounded-r-md hover:text-black" onClick={()=>FindService()} disabled={userType.length == 0}>
-            Find Service
+            Post Job
           </button>
         </div>
         <div className={`border-2 bg-white py-5 shadow-md rounded-b-md  w-full absolute z-20 top-10 ${userType.length !== 0 && userType[0] !== '' ? 'block':'hidden'}`}>

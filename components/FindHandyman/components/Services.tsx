@@ -37,9 +37,9 @@ export default function Services({setServiceCardData,setZip_code,zip_code,find_h
   }, [servicePopUp]);
   return (
     <div className="w-full">
-      <section className="text-center space-y-2">
-        <h1 className="text-3xl font-bold text-black">Our Services</h1>
-        <p className="text-xl font-medium">We Build for your Comfort</p>
+      <section className="text-center space-y-2 flex items-end justify-between">
+        <span className="font-bold flex gap-2 text-xl ">Find Handyman <p className="font-bold text-orange">Profiles</p></span><span><h1 className="text-3xl font-bold text-black">Our Services</h1>
+        <p className="text-xl font-medium">We Build for your Comfort</p></span><span></span>
       </section>
       <div className="mt-3 sm:px-5 py-3 relative">
         <ServiceCard slider={slider} slidesToShowCustom={7} setServicePopUP={setServicePopUP} setServiceCardData={setServiceCardData}/>
